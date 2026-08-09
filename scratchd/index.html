@@ -84,9 +84,10 @@
     </header>
 
     <!-- ============ IPHONE SHOTS ============ -->
-    <!-- Still to shoot: iphone-07-files (Files app over the notes folder) and
-         iphone-08-voice (voice note transcribing). Add them as two more <figure
-         class="shot"> blocks in the same shape once captured. -->
+    <!-- Still to shoot, per marketing/frame-screenshots.py: iphone-07-files
+         (Files app over the notes folder) and iphone-08-voice (voice note
+         transcribing). Add them as two more <figure class="shot"> blocks in the
+         same shape once captured. -->
     <section class="section tight" aria-label="Scratchd on iPhone">
       <div class="wrap">
         <div class="shots">
@@ -161,9 +162,10 @@
           <p class="kicker gold">Ownership</p>
           <h2>Your notes are files in a folder you chose.</h2>
           <p>
-            Scratchd stores each note as a plain file &mdash; <code>.md</code>, <code>.txt</code>,
-            <code>.json</code>, <code>.yaml</code> &mdash; in a folder you pick in your own iCloud Drive.
-            They are not rows in a database that only Scratchd can read.
+            Scratchd stores notes as plain files &mdash; <code>.md</code>, <code>.txt</code>,
+            <code>.json</code>, <code>.yaml</code>, <code>.proto</code>, textproto and more &mdash; in a
+            folder you pick in your own iCloud Drive. They are not rows in a database that only Scratchd
+            can read.
           </p>
           <p>
             You can search them with grep, open them in another editor, or keep the folder in a git repo.
@@ -323,8 +325,9 @@
           movement for this, not keystrokes, so it needs no permission at all. Turn it on in Settings.
         </p>
         <p>
-          Voice notes are transcribed on your device. Scratchd requires on&#8209;device speech recognition.
-          If a device cannot do it locally, Scratchd declines rather than uploading the audio.
+          On supported devices, voice notes run on device. Scratchd requires on&#8209;device speech
+          recognition and Apple&rsquo;s on&#8209;device models. If a device cannot do the work locally,
+          Scratchd declines rather than uploading the audio.
         </p>
 
         <ul class="bullets">
@@ -353,7 +356,7 @@
         <p>
           Scratchd also appears in CarPlay, and it is a conversation rather than a list you poke at.
           Pick a note and Scratchd reads it aloud. Then you can answer it: record a reply that appends to
-          the same note, or start a new one. Both are in your library by the time you park.
+          the same note, or start a new one. Both are queued into your library by the time you park.
           <span class="aside">Needs iOS&nbsp;26.4. <a href="support/">Why</a>.</span>
         </p>
       </div>
@@ -383,7 +386,7 @@
         </p>
         <p>
           Your notes are in your iCloud Drive. Innovatory does not run a server that stores them. Voice
-          transcription happens on your device. The app makes network requests only for things you set up
+          notes are processed on your device. The app makes network requests only for things you set up
           yourself, such as running an API request you wrote.
         </p>
 
@@ -440,7 +443,7 @@
 
           <details>
             <summary>What happens if I stop using Scratchd?</summary>
-            <p>You keep the folder. Plain <code>.md</code> and <code>.txt</code> files open in other apps.</p>
+            <p>You keep the folder. Plain text, Markdown and structured files such as JSON, YAML, <code>.proto</code> and textproto still open in other apps.</p>
           </details>
 
           <details>
@@ -450,12 +453,12 @@
 
           <details>
             <summary>Is my voice recording uploaded?</summary>
-            <p>No. Transcription requires on&#8209;device speech recognition, and if that is not available Scratchd declines rather than falling back to a server.</p>
+            <p>No. Voice notes require on&#8209;device speech recognition and Apple&rsquo;s on&#8209;device models, and if those are not available Scratchd declines rather than falling back to a server.</p>
           </details>
 
           <details>
             <summary>Is there AI in this?</summary>
-            <p>There are two optional features: a suggested journal prompt and a voice&#8209;note summary. Both run on your device using Apple&rsquo;s on&#8209;device models, on the OS versions that support them. Nothing is sent anywhere for processing, and there is no chatbot.</p>
+            <p>Two features use Apple&rsquo;s on&#8209;device models: voice notes and the journal&rsquo;s generated reflection. Both run on your device, on hardware and OS versions that support them, and neither is sent anywhere for processing. There is no chatbot.</p>
           </details>
 
           <details>
@@ -475,7 +478,7 @@
 
           <details>
             <summary>What do I need to run it?</summary>
-            <p>macOS&nbsp;26, iOS&nbsp;18, watchOS&nbsp;11. Two features need more: CarPlay requires iOS&nbsp;26.4, and voice&#8209;note summaries and the journal&rsquo;s generated reflection require a device that supports Apple&nbsp;Intelligence.</p>
+            <p>macOS&nbsp;26, iOS&nbsp;18, watchOS&nbsp;11. Two features need more: CarPlay requires iOS&nbsp;26.4, and voice notes plus the journal&rsquo;s generated reflection require a device that supports Apple&nbsp;Intelligence.</p>
           </details>
 
         </div>

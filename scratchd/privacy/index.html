@@ -95,7 +95,7 @@
           <tr>
             <td>Daily quote</td>
             <td>A request to <code>zenquotes.io</code> containing no identifier, no parameters and no content of yours.</td>
-            <td>Off by default. Only if you switch on the journal&rsquo;s daily quote.</td>
+            <td>Off by default. Only if you switch on the journal&rsquo;s optional daily quote.</td>
           </tr>
           <tr>
             <td>Preview enrichment providers</td>
@@ -108,13 +108,13 @@
       <h2>4. Voice, transcription and on-device intelligence</h2>
       <p>
         Voice notes are transcribed using Apple&rsquo;s speech recognition, with on&#8209;device recognition
-        set as a requirement. If a device cannot transcribe locally, Scratchd declines rather than falling
-        back to server&#8209;based recognition. Your audio is not transmitted, and recordings are discarded
-        after processing. This applies to dictation from Apple&nbsp;Watch and CarPlay as well.
+        set as a requirement, and are then written up using Apple&rsquo;s on&#8209;device models. Both steps
+        must be available locally. If either is not, Scratchd declines rather than falling back to
+        server&#8209;based recognition or a hosted model. Your audio is not transmitted, and recordings are
+        discarded after processing. This applies to dictation from Apple&nbsp;Watch and CarPlay as well.
       </p>
       <p>
-        Written summaries of voice notes, and the journal&rsquo;s optional generated reflection, use
-        Apple&rsquo;s on&#8209;device foundation models on operating system versions that support them.
+        The journal&rsquo;s optional generated reflection uses the same on&#8209;device foundation models.
         Nothing is sent to Innovatory or to any third&#8209;party AI service, and there is no cloud model.
       </p>
 

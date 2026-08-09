@@ -57,11 +57,11 @@
         </tbody>
       </table>
       <p>
-        Some features need more than the minimum. Voice notes and the journal&rsquo;s written summaries use
-        Apple&rsquo;s on&#8209;device models, which need macOS&nbsp;26 or iOS&nbsp;26 on a device that
-        supports Apple&nbsp;Intelligence. On other devices Scratchd tells you rather than sending your
-        audio away. CarPlay needs iOS&nbsp;26.4, because that is the version in which Apple opened CarPlay
-        to voice&#8209;first apps.
+        Some features need more than the minimum. Voice notes and the journal&rsquo;s generated reflection
+        use Apple&rsquo;s on&#8209;device models, which need macOS&nbsp;26 or iOS&nbsp;26 on hardware that
+        supports Apple&nbsp;Intelligence. Voice notes need both that and on&#8209;device speech recognition,
+        so on other devices Scratchd tells you rather than sending your audio away. CarPlay needs
+        iOS&nbsp;26.4, because that is the version in which Apple opened CarPlay to voice&#8209;first apps.
       </p>
 
       <h2>Common questions</h2>
@@ -130,9 +130,10 @@
 
       <h3>Voice notes say Apple Intelligence isn&rsquo;t available</h3>
       <p>
-        That message is accurate rather than a bug. Scratchd only transcribes using on&#8209;device speech
-        recognition and will not fall back to a server, so on a device that cannot do it locally it
-        declines instead.
+        That message is accurate rather than a bug. Voice notes need two things locally: on&#8209;device
+        speech recognition for the transcript, and Apple&rsquo;s on&#8209;device models to write it up.
+        Scratchd will not fall back to a server for either, so on a device that cannot do the work
+        locally it declines instead.
       </p>
 
       <h3>I deleted something I needed</h3>
