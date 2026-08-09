@@ -3,6 +3,8 @@
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
 }
 
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -16,7 +18,21 @@ body {
 
 main {
   max-width: 760px;
-  padding: 48px 24px;
+  padding: 48px 24px 72px;
+  width: 100%;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.mark {
+  display: block;
+  width: 44px;
+  height: 44px;
 }
 
 .eyebrow {
@@ -24,12 +40,15 @@ main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin: 0;
+  font-size: 14px;
 }
 
 h1 {
   font-size: clamp(44px, 8vw, 84px);
   line-height: 0.95;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
@@ -37,6 +56,77 @@ h1 {
   font-size: 21px;
   line-height: 1.5;
   max-width: 620px;
+}
+
+/* ---------- Products ---------- */
+
+.products {
+  margin: 56px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 28px;
+}
+
+.products h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #71717a;
+  margin: 0 0 18px;
+}
+
+.product-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.028);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.product-card:hover,
+.product-card:focus-visible {
+  border-color: rgba(240, 223, 196, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.product-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  flex: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.product-body h3 {
+  margin: 2px 0 8px;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.product-body p {
+  margin: 0 0 12px;
+  color: #a1a1aa;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.product-body .product-meta {
+  margin: -4px 0 12px;
+  font-size: 14px;
+  color: #71717a;
+}
+
+.product-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f0dfc4;
 }
 
 .button {
@@ -49,3 +139,20 @@ h1 {
   text-decoration: none;
   font-weight: 700;
 }
+
+@media (max-width: 520px) {
+  .product-card { flex-direction: column; gap: 16px; }
+  .product-icon { width: 60px; height: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+.feed-note {
+  margin: 22px 0 0;
+  font-size: 14px;
+  color: #71717a;
+}
+
+.feed-note a { color: #f0dfc4; }

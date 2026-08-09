@@ -1,0 +1,760 @@
+/* Scratchd — innovatory.xyz/scratchd/
+   Palette sampled from the app icon: cream #F0DFC4 on near-black,
+   with the three scratch slashes as accents (red, gold, blue). */
+
+:root {
+  color-scheme: dark;
+
+  --bg:        #09090b;
+  --bg-raised: #101012;
+  --cream:     #f0dfc4;
+  --cream-dim: #cbbda6;
+  --text:      #ededf0;
+  --muted:     #9a9aa3;
+  --faint:     #6c6c76;
+  --line:      rgba(240, 223, 196, 0.13);
+  --line-soft: rgba(255, 255, 255, 0.075);
+
+  --red:   #ee5105;
+  --gold:  #f5b833;
+  --blue:  #2b8fdd;
+
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Inter, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 62ch;
+  --pad: clamp(20px, 5vw, 40px);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--cream); }
+
+.wrap {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-inline: var(--pad);
+}
+
+.narrow { max-width: 760px; }
+
+/* ---------- Skip link ---------- */
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cream);
+  color: var(--bg);
+  padding: 10px 16px;
+  border-radius: 0 0 8px 0;
+  font-weight: 700;
+  z-index: 100;
+}
+.skip:focus { left: 0; }
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  background: rgba(9, 9, 11, 0.72);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 60px;
+}
+
+.nav-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.nav-home:hover { color: var(--text); }
+.nav-home img { width: 22px; height: 22px; display: block; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+
+@media (max-width: 620px) {
+  .nav-links a.optional { display: none; }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 44px) 0 clamp(18px, 2.2vw, 26px);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* the three slashes from the icon, as a wash behind the hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40% 0 auto;
+  height: 620px;
+  background:
+    radial-gradient(46% 40% at 32% 42%, rgba(238, 81, 5, 0.16), transparent 70%),
+    radial-gradient(44% 38% at 52% 50%, rgba(245, 184, 51, 0.14), transparent 70%),
+    radial-gradient(46% 40% at 70% 58%, rgba(43, 143, 221, 0.15), transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * { position: relative; z-index: 1; }
+
+.app-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 19px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 4.6vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 auto 14px;
+  max-width: 24ch;
+  color: var(--cream);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.7vw, 18px);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 auto 22px;
+}
+
+.hero-sub strong { color: var(--text); font-weight: 600; }
+
+.wordmark {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+/* ---------- Buttons ---------- */
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-weight: 650;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--cream);
+  color: #0b0b0d;
+}
+.btn-primary:hover { background: #fff2dd; }
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+.btn-ghost:hover { border-color: rgba(240, 223, 196, 0.36); background: rgba(255, 255, 255, 0.06); }
+
+/* pre-launch: buttons are inert placeholders, styled to look it */
+.btn[aria-disabled="true"] {
+  opacity: 0.62;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn svg { flex: none; }
+
+.aside {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--faint);
+}
+
+.aside a { color: var(--cream-dim); }
+
+.pricing-note {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.pricing-note strong { color: var(--cream-dim); font-weight: 700; }
+
+.availability {
+  font-size: 14px;
+  color: var(--faint);
+  margin: 0;
+}
+
+/* Keyboard chord, e.g. ⌃⌥ Space */
+kbd {
+  font-family: var(--sans);
+  font-size: 0.9em;
+  font-weight: 650;
+  color: var(--cream-dim);
+  background: rgba(240, 223, 196, 0.09);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+
+.feed-line { margin-top: 6px; }
+.feed-line a { color: var(--cream-dim); }
+
+.availability .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-right: 7px;
+  vertical-align: 1px;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: clamp(52px, 8vw, 92px) 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* First section after the hero: no rule, minimal gap, so product proof
+   breaks the fold instead of sitting a screen below it. */
+.section.tight {
+  padding-top: clamp(8px, 1.5vw, 18px);
+  border-top: 0;
+}
+
+.section h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+  margin: 0 0 18px;
+  max-width: 22ch;
+  color: var(--cream);
+}
+
+.section p {
+  color: var(--muted);
+  max-width: var(--measure);
+  margin: 0 0 16px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+.kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 12px;
+}
+
+.kicker.red   { color: var(--red); }
+.kicker.gold  { color: var(--gold); }
+.kicker.blue  { color: var(--blue); }
+
+/* two-column section: text + visual */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.split.reverse .split-visual { order: -1; }
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .split.reverse .split-visual { order: 0; }
+}
+
+/* ---------- Feature list ---------- */
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.66em;
+  width: 9px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--cream-dim);
+  opacity: 0.75;
+}
+
+/* ---------- Device frames / screenshot slots ---------- */
+
+/* Horizontal scroller that bleeds to the viewport edge, so a partially visible
+   card at the right reads as "there is more" rather than as a clipping bug. */
+.shots {
+  display: flex;
+  gap: clamp(14px, 2.4vw, 26px);
+  overflow-x: auto;
+  padding: 4px var(--pad) 22px;
+  margin-inline: calc(var(--pad) * -1);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.shots::-webkit-scrollbar { height: 8px; }
+.shots::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+
+.shot {
+  flex: none;
+  scroll-snap-align: center;
+  width: clamp(190px, 24vw, 240px);
+}
+
+.shot figcaption {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--cream-dim);
+  text-align: center;
+}
+
+/* iPhone */
+.phone {
+  position: relative;
+  border-radius: 13%/6%;
+  padding: 8px;
+  background: linear-gradient(160deg, #2a2a2e, #131316 60%, #232327);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.phone .screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1206 / 2622;   /* iPhone 16 Pro, matching the captures */
+  border-radius: 11%/5%;
+  overflow: hidden;
+  background: #0d0d10;
+}
+
+/* Dynamic Island. Simulator captures record the display buffer, so the island
+   is not in the pixels — the status bar just has an empty gap where it belongs.
+   Drawn here rather than baked into the images so it survives a re-shoot.
+   126x37pt at the top of a 402pt-wide screen = 31.3% wide, 1.26% down. */
+.phone .screen::after {
+  content: "";
+  position: absolute;
+  top: 1.26%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 31.3%;
+  aspect-ratio: 126 / 37;
+  background: #000;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Mac window */
+.mac {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #17171a;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.mac .titlebar {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-inline: 12px;
+  background: #202024;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.mac .titlebar i {
+  width: 11px; height: 11px; border-radius: 50%; display: block;
+}
+.mac .titlebar i:nth-child(1) { background: #ff5f57; }
+.mac .titlebar i:nth-child(2) { background: #febc2e; }
+.mac .titlebar i:nth-child(3) { background: #28c840; }
+
+.mac .screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #0d0d10;
+  overflow: hidden;
+}
+
+.screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+
+/* The placeholder that sits in a screen until a real screenshot is dropped in.
+   Delete the <div class="slot"> and add <img> — nothing else changes. */
+.slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 14px;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.022) 0 10px,
+      transparent 10px 20px
+    ),
+    #0e0e11;
+  border: 1px dashed rgba(240, 223, 196, 0.24);
+  color: var(--faint);
+}
+
+.slot .slot-n {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--cream-dim);
+  opacity: 0.85;
+}
+
+.slot .slot-what {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--muted);
+  max-width: 22ch;
+}
+
+.slot .slot-file {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--faint);
+  word-break: break-all;
+}
+
+.mac .slot .slot-what { max-width: 34ch; font-size: 13px; }
+
+/* ---------- Format chips ---------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 5px 11px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  color: var(--cream-dim);
+  background: rgba(240, 223, 196, 0.045);
+}
+
+/* ---------- Callout ---------- */
+
+.callout {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 14px 14px 0;
+  padding: 22px 24px;
+  background: rgba(245, 184, 51, 0.05);
+  margin: 30px 0 0;
+  max-width: var(--measure);
+}
+
+.callout p { margin: 0; color: var(--cream-dim); }
+
+/* ---------- Terminal sample ---------- */
+
+.term {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background: #0c0c0f;
+  box-shadow: 0 18px 46px rgba(0,0,0,0.5);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.term-bar {
+  display: flex; align-items: center; gap: 7px;
+  padding: 9px 12px;
+  background: #17171b;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.term-bar i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+.term-bar i:nth-child(1) { background: #ff5f57; }
+.term-bar i:nth-child(2) { background: #febc2e; }
+.term-bar i:nth-child(3) { background: #28c840; }
+.term-bar span { margin-left: 6px; font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
+
+.term pre {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  color: var(--muted);
+  white-space: pre;
+}
+
+.term .p  { color: var(--blue); }
+.term .c  { color: var(--cream); }
+.term .g  { color: var(--gold); }
+.term .dim { color: var(--faint); }
+
+/* ---------- FAQ ---------- */
+
+.faq { display: grid; gap: 0; max-width: 800px; }
+
+.faq details {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 40px 20px 0;
+  font-size: 17.5px;
+  font-weight: 620;
+  color: var(--text);
+  position: relative;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 10px; height: 10px;
+  border-right: 2px solid var(--faint);
+  border-bottom: 2px solid var(--faint);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+
+.faq details p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+/* ---------- Requirements strip ---------- */
+
+.reqs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 34px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.reqs b { color: var(--text); font-weight: 620; }
+
+/* ---------- Footer ---------- */
+
+.footer {
+  border-top: 1px solid var(--line-soft);
+  padding: 44px 0 56px;
+  color: var(--faint);
+  font-size: 14.5px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.footer-tag { color: var(--cream-dim); font-weight: 620; margin: 0 0 4px; }
+.footer-plat { margin: 0; }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-weight: 600;
+}
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--cream); }
+
+.footer-note { margin: 0; max-width: 60ch; line-height: 1.55; }
+
+/* ---------- Doc pages (support / privacy) ---------- */
+
+.doc { padding: clamp(40px, 7vw, 76px) 0 40px; }
+
+.doc h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--cream);
+}
+
+.doc .updated {
+  color: var(--faint);
+  font-size: 14px;
+  margin: 0 0 40px;
+}
+
+.doc h2 {
+  font-size: 22px;
+  letter-spacing: -0.012em;
+  margin: 44px 0 12px;
+  color: var(--text);
+}
+
+.doc h3 {
+  font-size: 17px;
+  margin: 28px 0 8px;
+  color: var(--cream-dim);
+}
+
+.doc p, .doc li { color: var(--muted); max-width: var(--measure); }
+.doc ul, .doc ol { padding-left: 22px; }
+.doc li { margin-bottom: 8px; }
+
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.doc th, .doc td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  color: var(--muted);
+}
+
+.doc th {
+  color: var(--cream-dim);
+  font-weight: 650;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.doc code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: var(--cream-dim);
+}
+
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  background: rgba(240, 223, 196, 0.04);
+  margin: 26px 0;
+  max-width: var(--measure);
+}
+
+.contact-card p { margin: 0 0 10px; }
+.contact-card p:last-child { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

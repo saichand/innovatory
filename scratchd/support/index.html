@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scratchd — Support</title>
+  <meta name="description" content="Support for Scratchd: how to get help, where your notes live, and answers to common questions." />
+  <link rel="canonical" href="https://innovatory.xyz/scratchd/support/" />
+  <link rel="icon" href="../../assets/scratchd/icon-128.png" type="image/png" />
+  <link rel="stylesheet" href="../scratchd.css" />
+  <link rel="alternate" type="application/rss+xml" title="Innovatory" href="../../feed.xml" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-home" href="../">
+        <img src="../../assets/scratchd/icon-128.png" alt="" width="22" height="22" style="border-radius:5px" />
+        Scratchd
+      </a>
+      <div class="nav-links">
+        <a href="../privacy/">Privacy</a>
+        <a href="../../">Innovatory</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="doc">
+    <div class="wrap narrow">
+      <h1>Support</h1>
+      <p class="updated">Scratchd for Mac, iPhone, iPad and Apple&nbsp;Watch</p>
+
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href="mailto:hello@innovatory.xyz">hello@innovatory.xyz</a></p>
+        <p>Scratchd is made by one person. Replies usually take a few days.</p>
+      </div>
+
+      <h2>Before you write in</h2>
+      <p>
+        Please include your <strong>build number</strong>, which is in Settings &rarr; About, and what you
+        were doing when the problem happened. If a particular note is involved, attaching the file is more
+        useful than describing it, since every note is a plain text file you can attach to an email. Only
+        do that if you are comfortable sharing what is in it. A redacted copy, or a small note that
+        reproduces the same problem, works just as well.
+      </p>
+
+      <h2>System requirements</h2>
+      <table>
+        <thead>
+          <tr><th>Platform</th><th>Minimum</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mac</td><td>macOS 26</td></tr>
+          <tr><td>iPhone &amp; iPad</td><td>iOS / iPadOS 18</td></tr>
+          <tr><td>Apple Watch</td><td>watchOS 11</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Some features need more than the minimum. Voice notes and the journal&rsquo;s written summaries use
+        Apple&rsquo;s on&#8209;device models, which need macOS&nbsp;26 or iOS&nbsp;26 on a device that
+        supports Apple&nbsp;Intelligence. On other devices Scratchd tells you rather than sending your
+        audio away. CarPlay needs iOS&nbsp;26.4, because that is the version in which Apple opened CarPlay
+        to voice&#8209;first apps.
+      </p>
+
+      <h2>Common questions</h2>
+
+      <h3>Where are my notes?</h3>
+      <p>
+        In the folder you chose when you first opened Scratchd &mdash; by default a Scratchd folder in
+        your iCloud Drive. Open it in Finder or the Files app and you&rsquo;ll see your notes as ordinary
+        files. Tasks are in <code>tasks/</code>, saved links in <code>links/</code>, journal days in
+        <code>journal/</code>, and deleted notes sit in a <code>trash/</code> folder inside the library
+        for 30 days before they&rsquo;re removed.
+      </p>
+
+      <h3>I edited a note in another app and Scratchd didn&rsquo;t notice</h3>
+      <p>
+        It should. Scratchd watches the folder and reconciles from disk. If a change does not appear,
+        reopening the app forces a full rescan. If the file is in iCloud Drive, check Settings &rarr;
+        Sync&nbsp;Health first. A file that has not finished downloading looks present but is still a
+        placeholder.
+      </p>
+
+      <h3>Something isn&rsquo;t syncing between my devices</h3>
+      <p>
+        Settings &rarr; Sync&nbsp;Health shows the iCloud state of every file, flags uploads stalled for
+        more than ten minutes, and lets you request a download for anything still in the cloud. Syncing
+        is iCloud Drive, so the usual causes apply: different Apple Accounts on each device, iCloud Drive
+        switched off for Scratchd, Low&nbsp;Power&nbsp;Mode, or no space left.
+      </p>
+
+      <h3>The Mac shortcut &#8963;&#8997;&nbsp;Space doesn&rsquo;t open anything</h3>
+      <p>
+        Which permission you need depends on which build you have, and granting the wrong one changes nothing.
+      </p>
+      <table>
+        <thead><tr><th></th><th>Mac App Store</th><th>Direct download</th></tr></thead>
+        <tbody>
+          <tr><td>Shortcuts</td><td><code>&#8963;&#8997; Space</code> only</td><td><code>&#8963;&#8997; Space</code>, Double&nbsp;Shift, Double&nbsp;Caps&nbsp;Lock</td></tr>
+          <tr><td>Permission</td><td>Input Monitoring</td><td>Accessibility</td></tr>
+          <tr><td>Needed for</td><td>the one shortcut</td><td>all of them</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Open System&nbsp;Settings &rarr; Privacy&nbsp;&amp;&nbsp;Security, switch Scratchd on in the pane your
+        build uses, then quit and reopen Scratchd. The permission is not picked up until it relaunches.
+      </p>
+      <p>
+        The two builds also behave differently once it works. The App Store build only listens, so
+        &#8963;&#8997;&nbsp;Space still reaches the app you are in and another app bound to the same chord
+        will fire too. The direct&#8209;download build takes the keystroke, so the frontmost app does not
+        see it.
+      </p>
+
+      <h3>The mouse shake gesture does nothing</h3>
+      <p>
+        It is off until you switch it on, in Settings &rarr; General. The gesture is four quick
+        left&#8209;and&#8209;right reversals inside about three quarters of a second, each one moving the
+        pointer a reasonable distance, and it deliberately ignores movement that drifts too far vertically
+        so that ordinary mouse use does not set it off. There is also a one&#8209;and&#8209;a&#8209;half
+        second cooldown between triggers.
+      </p>
+      <p>
+        macOS has its own shake&#8209;to&#8209;locate behaviour that enlarges the pointer, and it responds
+        to roughly the same movement. If the pointer growing is distracting, you can turn that off in
+        System&nbsp;Settings &rarr; Accessibility &rarr; Display &rarr; Shake pointer to locate.
+      </p>
+
+      <h3>Voice notes say Apple Intelligence isn&rsquo;t available</h3>
+      <p>
+        That message is accurate rather than a bug. Scratchd only transcribes using on&#8209;device speech
+        recognition and will not fall back to a server, so on a device that cannot do it locally it
+        declines instead.
+      </p>
+
+      <h3>I deleted something I needed</h3>
+      <p>
+        Check the Trash view. Deleted notes are recoverable for 30 days. The trash is a folder inside your
+        library, so a note deleted on the Mac can be restored from your iPhone.
+      </p>
+
+      <h3>Can I move my notes folder?</h3>
+      <p>
+        Yes. Move the folder, then point Scratchd at the new location in Settings. Nothing is stored
+        anywhere else &mdash; the folder is the library.
+      </p>
+
+      <h3>How do I export?</h3>
+      <p>
+        There is no export step. Copy the folder. Every note is already in a format other apps can read.
+      </p>
+
+      <h3>Scratchd does not appear in CarPlay</h3>
+      <p>
+        CarPlay support requires iOS&nbsp;26.4 or later, and it will not appear at all on earlier versions.
+        If you are on 26.4 and it is still missing, check that Scratchd is enabled in Settings &rarr;
+        General &rarr; CarPlay for your car. Dictation from CarPlay also needs Microphone and Speech
+        Recognition access, which you have to grant on the iPhone first.
+      </p>
+      <p>
+        The version requirement is not arbitrary. Apple has no notes category for CarPlay, and its guidance
+        bars most apps from recording while CarPlay is active. iOS&nbsp;26.4 added a category for
+        voice&#8209;first apps, which is the one Scratchd ships under, so there is no earlier version it
+        could have worked on.
+      </p>
+
+      <h2>Feature requests and bugs</h2>
+      <p>
+        Both go to the same address. Feature requests that describe the problem you ran into are more
+        useful than ones that describe a solution.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        Scratchd has no account, collects no analytics, and keeps your notes in your own iCloud Drive.
+        The <a href="../privacy/">privacy policy</a> lists every network request the app can make.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="footer-tag">Scratchd</p>
+          <p class="footer-plat">Mac &middot; iPhone &middot; iPad &middot; Apple Watch</p>
+        </div>
+        <div class="footer-links">
+          <a href="../">Overview</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="mailto:hello@innovatory.xyz">Contact</a>
+          <a href="../../">Innovatory</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

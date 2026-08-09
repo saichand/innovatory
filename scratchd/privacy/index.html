@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scratchd — Privacy Policy</title>
+  <meta name="description" content="Scratchd's privacy policy. No account, no analytics, no tracking. Your notes are files in your own iCloud Drive." />
+  <link rel="canonical" href="https://innovatory.xyz/scratchd/privacy/" />
+  <link rel="icon" href="../../assets/scratchd/icon-128.png" type="image/png" />
+  <link rel="stylesheet" href="../scratchd.css" />
+  <link rel="alternate" type="application/rss+xml" title="Innovatory" href="../../feed.xml" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-home" href="../">
+        <img src="../../assets/scratchd/icon-128.png" alt="" width="22" height="22" style="border-radius:5px" />
+        Scratchd
+      </a>
+      <div class="nav-links">
+        <a href="../support/">Support</a>
+        <a href="../../">Innovatory</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="doc">
+    <div class="wrap narrow">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated 9 August 2026 &middot; Scratchd, made by Innovatory</p>
+
+      <div class="contact-card">
+        <p><strong>The short version.</strong> Scratchd has no account and no servers. Your notes are
+        ordinary files in a folder you chose, in your own iCloud Drive. Innovatory cannot see them, does
+        not receive them, and collects no analytics or usage data.</p>
+      </div>
+
+      <h2>1. What Innovatory collects</h2>
+      <p>
+        Nothing. There is no sign&#8209;up, no account, no user identifier, no analytics SDK, no crash
+        reporter, and no advertising or tracking framework in the app. Scratchd&rsquo;s privacy manifest
+        declares no tracking and no collected data types, and that declaration matches the code.
+      </p>
+      <p>
+        Innovatory operates no server that stores or receives your notes.
+      </p>
+
+      <h2>2. Where your data lives</h2>
+      <p>
+        Your notes, tasks, saved links, journal entries, drawings and attachments are stored as files in
+        a folder you select &mdash; by default in your own iCloud&nbsp;Drive. That folder is visible to
+        you in Finder and the Files app.
+      </p>
+      <p>
+        If you keep the folder in iCloud&nbsp;Drive, syncing between your devices is performed by Apple
+        under <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s privacy policy</a>, using your
+        Apple&nbsp;Account. Innovatory is not a party to that transfer and has no access to it. If you
+        choose a local folder instead, nothing syncs at all.
+      </p>
+      <p>
+        A small set of journal preferences (reminder times, focus areas and similar settings) is synced
+        between your own devices using Apple&rsquo;s iCloud key&#8209;value storage. No note content is
+        included.
+      </p>
+
+      <h2>3. Every network request the app can make</h2>
+      <p>
+        Scratchd is not an offline&#8209;only app, and this policy will not claim it is. The complete list
+        of outbound requests follows. Every one is either started by you or switched off until you turn it
+        on, and none of them sends note content to Innovatory.
+      </p>
+      <p>
+        Apart from the quote service listed below, Scratchd contains no addresses of its own. Every other
+        request goes to an address you supplied: a URL in a request note, a link you saved, or a provider
+        you defined.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>Request</th><th>What is sent</th><th>When</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>API request notes</td>
+            <td>Exactly the HTTP request you composed &mdash; its URL, headers and body &mdash; to the server you addressed it to.</td>
+            <td>Only when you press Run on a request you wrote yourself.</td>
+          </tr>
+          <tr>
+            <td>Link title lookup</td>
+            <td>A request to the URL you are saving, to read its page title. Mac only.</td>
+            <td>When you save a link.</td>
+          </tr>
+          <tr>
+            <td>Daily quote</td>
+            <td>A request to <code>zenquotes.io</code> containing no identifier, no parameters and no content of yours.</td>
+            <td>Off by default. Only if you switch on the journal&rsquo;s daily quote.</td>
+          </tr>
+          <tr>
+            <td>Preview enrichment providers</td>
+            <td>An identifier read from the file you are previewing, sent to a provider you defined. Scratchd ships with no providers and no addresses built in.</td>
+            <td>Off by default. Requires switching on &ldquo;Allow library enrichment providers&rdquo; and adding a <code>providers.yaml</code> file to your own library.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Voice, transcription and on-device intelligence</h2>
+      <p>
+        Voice notes are transcribed using Apple&rsquo;s speech recognition, with on&#8209;device recognition
+        set as a requirement. If a device cannot transcribe locally, Scratchd declines rather than falling
+        back to server&#8209;based recognition. Your audio is not transmitted, and recordings are discarded
+        after processing. This applies to dictation from Apple&nbsp;Watch and CarPlay as well.
+      </p>
+      <p>
+        Written summaries of voice notes, and the journal&rsquo;s optional generated reflection, use
+        Apple&rsquo;s on&#8209;device foundation models on operating system versions that support them.
+        Nothing is sent to Innovatory or to any third&#8209;party AI service, and there is no cloud model.
+      </p>
+
+      <h2>5. Permissions the app may ask for</h2>
+      <table>
+        <thead>
+          <tr><th>Permission</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Microphone</td><td>Recording voice notes. Recordings are discarded after transcription.</td></tr>
+          <tr><td>Speech recognition</td><td>On&#8209;device transcription of those recordings.</td></tr>
+          <tr><td>Calendar</td><td>Reading your events so meeting notes can be suggested and prefilled. Read&#8209;only; nothing is written back and nothing leaves the device.</td></tr>
+          <tr><td>Notifications</td><td>Local journal reminders at times you choose. Local only &mdash; there is no push server.</td></tr>
+          <tr><td>Automation / Apple Events <span style="opacity:.7">(Mac)</span></td><td>Reading the frontmost tab&rsquo;s address and title from a named list of browsers when you capture a link. Not used to control other apps; the feature simply does nothing if you decline.</td></tr>
+          <tr><td>Input Monitoring <span style="opacity:.7">(Mac)</span></td><td>Noticing the one global shortcut that opens Quick Capture, <code>&#8963;&#8997; Space</code>. Scratchd listens for it and does not swallow it, so the keystroke still reaches whatever app is in front. No other key is acted on, and nothing about your typing is recorded or transmitted.</td></tr>
+          <tr><td>Accessibility <span style="opacity:.7">(Mac, direct download only)</span></td><td>Required for the global Quick Capture shortcut in the direct&#8209;download build, including the Double&nbsp;Shift and Double&nbsp;Caps&nbsp;Lock options that build adds. The Mac App Store build uses Input&nbsp;Monitoring instead and offers only <code>&#8963;&#8997; Space</code>.</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Scratchd does not request access to your photo library &mdash; picking a photo uses the system
+        picker, which hands over only the image you chose. Scratchd does not request location, contacts,
+        or health data, and does not use them.
+      </p>
+
+      <h2>6. Diagnostics</h2>
+      <p>
+        Scratchd keeps a diagnostic log on your device so you can see what it has been doing. It is never
+        uploaded. If you want to send it to Innovatory when reporting a problem, you attach it to an email
+        yourself.
+      </p>
+
+      <h2>7. Children</h2>
+      <p>
+        Scratchd is suitable for all ages and collects no personal information from anyone, including
+        children.
+      </p>
+
+      <h2>8. Your rights</h2>
+      <p>
+        Rights of access, correction, deletion and portability exist under laws including the GDPR and the
+        CCPA. In Scratchd&rsquo;s case the design already satisfies them: your data is in a folder you
+        control, so you can read it, edit it, copy it or delete it at any time. Innovatory holds no copy,
+        and cannot produce or destroy one on your behalf.
+      </p>
+      <p>
+        Innovatory holds no personal information, and so does not sell or share any.
+      </p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>
+        If this policy changes, the date at the top changes with it. Any change that affects what leaves
+        your device will also be noted in the app&rsquo;s release notes.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        Questions about this policy: <a href="mailto:hello@innovatory.xyz">hello@innovatory.xyz</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="footer-tag">Scratchd</p>
+          <p class="footer-plat">Mac &middot; iPhone &middot; iPad &middot; Apple Watch</p>
+        </div>
+        <div class="footer-links">
+          <a href="../">Overview</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:hello@innovatory.xyz">Contact</a>
+          <a href="../../">Innovatory</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

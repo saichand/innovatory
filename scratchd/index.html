@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scratchd — capture first, sort it later</title>
+  <meta name="description" content="Scratchd is a notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in your own iCloud Drive. No account, no tracking." />
+  <link rel="canonical" href="https://innovatory.xyz/scratchd/" />
+  <link rel="icon" href="../assets/scratchd/icon-128.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/scratchd/icon-256.png" />
+  <link rel="stylesheet" href="scratchd.css" />
+  <link rel="alternate" type="application/rss+xml" title="Innovatory" href="../feed.xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Scratchd — capture first, sort it later" />
+  <meta property="og:description" content="A notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in your own iCloud Drive." />
+  <meta property="og:url" content="https://innovatory.xyz/scratchd/" />
+  <meta property="og:image" content="https://innovatory.xyz/assets/scratchd/icon-512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Scratchd",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "macOS 26, iOS 18, watchOS 11",
+    "url": "https://innovatory.xyz/scratchd/",
+    "author": { "@type": "Organization", "name": "Innovatory", "url": "https://innovatory.xyz/" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-home" href="../">
+        <img src="../assets/logo-64.png" alt="" width="22" height="22" />
+        Innovatory
+      </a>
+      <div class="nav-links">
+        <a href="#files" class="optional">Files</a>
+        <a href="#formats" class="optional">Formats</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <div class="wrap">
+        <img src="../assets/scratchd/icon-256.png" alt="Scratchd app icon" class="app-icon" width="84" height="84" />
+        <p class="wordmark">Scratchd</p>
+        <h1>Write it down before you decide where it goes.</h1>
+        <p class="hero-sub">
+          Scratchd is a notes app for Mac, iPhone, iPad and Apple&nbsp;Watch. Every note is a
+          <strong>plain file in your own iCloud Drive</strong>. There is no account, and nothing is tracked.
+        </p>
+
+        <!-- PRE-LAUNCH CTAs. ON LAUNCH: swap the primary for the App Store links
+             (Apple SVG glyph is kept below, commented, for that swap). -->
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:hello@innovatory.xyz?subject=Scratchd%20launch&amp;body=Let%20me%20know%20when%20Scratchd%20is%20out.">
+            Email me when it launches
+          </a>
+          <a class="btn btn-ghost" href="privacy/">
+            What it stores
+          </a>
+        </div>
+        <!-- <svg width="16" height="19" viewBox="0 0 16 19" fill="currentColor" aria-hidden="true"><path d="M13.3 10.1c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8C4.4 5.1 3 6 2.2 7.4.5 10.3 1.8 14.6 3.4 17c.8 1.1 1.7 2.4 3 2.4 1.2 0 1.6-.8 3.1-.8 1.4 0 1.8.8 3.1.7 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-3.8zM11 3.5c.7-.8 1.1-2 1-3.2-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.3z" transform="translate(-1)"/></svg> -->
+
+        <p class="availability">
+          <span class="dot" aria-hidden="true"></span>
+          Coming soon. Mac $4.99, iPhone &amp; iPad $4.99, both for $8.99. Bought once, no subscription.
+        </p>
+        <p class="availability feed-line">
+          Or <a href="../feed.xml">follow the feed</a>. It asks for nothing, not even an email address.
+        </p>
+      </div>
+    </header>
+
+    <!-- ============ IPHONE SHOTS ============ -->
+    <!-- Still to shoot: iphone-07-files (Files app over the notes folder) and
+         iphone-08-voice (voice note transcribing). Add them as two more <figure
+         class="shot"> blocks in the same shape once captured. -->
+    <section class="section tight" aria-label="Scratchd on iPhone">
+      <div class="wrap">
+        <div class="shots">
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-01-capture.jpg" alt="Scratchpad, mid&#8209;jot" width="660" height="1435" loading="lazy" />
+            </div></div>
+            <figcaption>Type first. Decide later.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-02-inbox.jpg" alt="Inbox with mixed note types" width="660" height="1435" loading="lazy" />
+            </div></div>
+            <figcaption>One inbox. Filing is optional.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-03-types.jpg" alt="New&#8209;note menu, all eleven types" width="660" height="1435" loading="lazy" />
+            </div></div>
+            <figcaption>Eleven kinds of note.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-04-tasks.jpg" alt="Tasks, natural&#8209;language entry" width="660" height="1435" loading="lazy" />
+            </div></div>
+            <figcaption>Plain English becomes a task.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-05-journal.jpg" alt="Journal with the mood row" width="660" height="1435" loading="lazy" />
+            </div></div>
+            <figcaption>A journal that doesn&rsquo;t nag.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-06-links.jpg" alt="Link collections" width="660" height="1435" loading="lazy" />
+            </div></div>
+            <figcaption>Read it later, same library.</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INBOX ============ -->
+    <section class="section" id="inbox">
+      <div class="wrap narrow">
+        <p class="kicker red">Capture</p>
+        <h2>One inbox. Filing is optional.</h2>
+        <p>
+          Everything new goes to the same inbox. You can archive it, pin it, tag it or turn it into a
+          task whenever you feel like it. You do not have to set up folders before you start writing,
+          and Scratchd never prompts you to organise anything.
+        </p>
+        <p>
+          Today&rsquo;s scratchpad is already created and already dated. It is meant for the notes that
+          are not worth naming a file for.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FILES ============ -->
+    <section class="section" id="files">
+      <div class="wrap split">
+        <div>
+          <p class="kicker gold">Ownership</p>
+          <h2>Your notes are files in a folder you chose.</h2>
+          <p>
+            Scratchd stores each note as a plain file &mdash; <code>.md</code>, <code>.txt</code>,
+            <code>.json</code>, <code>.yaml</code> &mdash; in a folder you pick in your own iCloud Drive.
+            They are not rows in a database that only Scratchd can read.
+          </p>
+          <p>
+            You can search them with grep, open them in another editor, or keep the folder in a git repo.
+            Scratchd reads the folder on launch and reconciles against what is on disk, so a note you
+            edited somewhere else is picked up rather than overwritten.
+          </p>
+          <p>
+            If you stop using Scratchd, the folder stays where it is and everything in it still opens in
+            other apps.
+          </p>
+        </div>
+
+        <div class="split-visual">
+          <div class="term">
+            <div class="term-bar"><i></i><i></i><i></i><span>~/iCloud Drive/Scratchd</span></div>
+<pre><span class="p">$</span> <span class="c">grep -rl "postgres" .</span>
+<span class="g">./inbox/2026-08-04-migration.md</span>
+<span class="g">./notes/db-failover-runbook.md</span>
+<span class="g">./api/staging-healthcheck.api</span>
+
+<span class="p">$</span> <span class="c">ls tasks/</span>
+<span class="dim">groceries.task   ship-1.0.task   reading.task</span>
+
+<span class="p">$</span> <span class="c">git add . &amp;&amp; git commit -m "notes"</span>
+<span class="dim">[main 4f2c1ab] notes
+ 12 files changed, 208 insertions(+)</span>
+</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMATS ============ -->
+    <section class="section" id="formats">
+      <div class="wrap">
+        <p class="kicker blue">Formats</p>
+        <h2>Not everything you note down is prose.</h2>
+        <p>
+          Paste a JSON payload and Scratchd renders it as a browsable tree. Open a <code>.proto</code>
+          schema and you can jump from a field type to its definition. YAML, textproto, Mermaid diagrams
+          and runnable API requests live in the same library as your written notes.
+        </p>
+        <p>
+          There are also sticky boards for arranging ideas next to each other, a canvas, and freehand
+          drawing with Apple&nbsp;Pencil.
+        </p>
+
+        <ul class="chips">
+          <li>.md</li><li>.txt</li><li>.json</li><li>.yaml</li>
+          <li>.proto</li><li>.textproto</li><li>.api</li>
+          <li>.stickies</li><li>.canvas</li><li>.drawing</li><li>.jrnl</li>
+        </ul>
+
+        <div class="shots" style="margin-top:40px">
+
+          <figure class="shot" style="width:clamp(300px,42vw,440px)">
+            <div class="mac">
+              <div class="titlebar"><i></i><i></i><i></i></div>
+              <div class="screen">
+                <div class="slot">
+                  <span class="slot-n">M01</span>
+                  <span class="slot-what">Editor beside the Markdown preview</span>
+                  <span class="slot-file">mac-01-editor.png</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>Write. It&rsquo;s already saved.</figcaption>
+          </figure>
+
+          <figure class="shot" style="width:clamp(300px,42vw,440px)">
+            <div class="mac">
+              <div class="titlebar"><i></i><i></i><i></i></div>
+              <div class="screen">
+                <div class="slot">
+                  <span class="slot-n">M02</span>
+                  <span class="slot-what">JSON tree beside the raw payload</span>
+                  <span class="slot-file">mac-02-json.png</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>JSON that reads like JSON.</figcaption>
+          </figure>
+
+          <figure class="shot" style="width:clamp(300px,42vw,440px)">
+            <div class="mac">
+              <div class="titlebar"><i></i><i></i><i></i></div>
+              <div class="screen">
+                <div class="slot">
+                  <span class="slot-n">M03</span>
+                  <span class="slot-what">.proto viewer with go&#8209;to&#8209;definition</span>
+                  <span class="slot-file">mac-03-proto.png</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>Jump through your schemas.</figcaption>
+          </figure>
+
+          <figure class="shot" style="width:clamp(300px,42vw,440px)">
+            <div class="mac">
+              <div class="titlebar"><i></i><i></i><i></i></div>
+              <div class="screen">
+                <div class="slot">
+                  <span class="slot-n">M04</span>
+                  <span class="slot-what">Compare &mdash; two files, one hunk applied</span>
+                  <span class="slot-file">mac-04-compare.png</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>Diff without leaving.</figcaption>
+          </figure>
+
+          <figure class="shot" style="width:clamp(300px,42vw,440px)">
+            <div class="mac">
+              <div class="titlebar"><i></i><i></i><i></i></div>
+              <div class="screen">
+                <div class="slot">
+                  <span class="slot-n">M05</span>
+                  <span class="slot-what">Sticky board or canvas, mid&#8209;mess</span>
+                  <span class="slot-file">mac-05-sticky.png</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>Room for the messy stage.</figcaption>
+          </figure>
+
+          <figure class="shot" style="width:clamp(300px,42vw,440px)">
+            <div class="mac">
+              <div class="titlebar"><i></i><i></i><i></i></div>
+              <div class="screen">
+                <div class="slot">
+                  <span class="slot-n">M06</span>
+                  <span class="slot-what">Quick Capture panel floating over another app</span>
+                  <span class="slot-file">mac-07-capture.png</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>From anywhere. One shortcut.</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPTURE ============ -->
+    <section class="section" id="capture">
+      <div class="wrap narrow">
+        <p class="kicker red">Everywhere</p>
+        <h2>Capture from wherever you are.</h2>
+        <p>
+          Scratchd has a share sheet extension, a Home Screen widget, Siri and Shortcuts support, and an
+          Apple&nbsp;Watch app. On the Mac, <kbd>&#8963;&#8997;&nbsp;Space</kbd> opens the capture panel
+          over whatever you are using.
+        </p>
+        <p>
+          If your hand is already on the mouse, you can shake it instead. Four quick left&#8209;and&#8209;right
+          reversals inside three quarters of a second and the capture panel opens. Scratchd watches mouse
+          movement for this, not keystrokes, so it needs no permission at all. Turn it on in Settings.
+        </p>
+        <p>
+          Voice notes are transcribed on your device. Scratchd requires on&#8209;device speech recognition.
+          If a device cannot do it locally, Scratchd declines rather than uploading the audio.
+        </p>
+
+        <ul class="bullets">
+          <li>Share sheet on Mac and iPhone, for links, screenshots and selected text</li>
+          <li>Home Screen widget with tiles for note, task, link and journal</li>
+          <li>Siri and Shortcuts</li>
+          <li>Apple Watch, for voice notes and journal entries</li>
+          <li>CarPlay, which reads a note aloud and records your reply back into it. Requires iOS&nbsp;26.4</li>
+          <li><kbd>&#8963;&#8997;&nbsp;Space</kbd> on the Mac. macOS asks for Input&nbsp;Monitoring the first time. Scratchd watches for that one shortcut and no other key</li>
+          <li>Shake the mouse on the Mac. No permission needed, and off until you switch it on</li>
+          <li>Today&rsquo;s scratchpad, one step away on every platform</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WATCH & CARPLAY ============ -->
+    <section class="section" id="wrist-and-car">
+      <div class="wrap narrow">
+        <p class="kicker blue">Watch &amp; CarPlay</p>
+        <h2>Two places where you cannot type.</h2>
+        <p>
+          The Apple&nbsp;Watch app records a voice note or a journal entry from your wrist. It transfers
+          to your iPhone, where it is transcribed on device and written into your library. If your phone
+          is out of range, the entry waits and retries.
+        </p>
+        <p>
+          Scratchd also appears in CarPlay, and it is a conversation rather than a list you poke at.
+          Pick a note and Scratchd reads it aloud. Then you can answer it: record a reply that appends to
+          the same note, or start a new one. Both are in your library by the time you park.
+          <span class="aside">Needs iOS&nbsp;26.4. <a href="support/">Why</a>.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FLEETING ============ -->
+    <section class="section" id="fleeting">
+      <div class="wrap narrow">
+        <p class="kicker gold">Fleeting notes</p>
+        <h2>Notes you can give an expiry date.</h2>
+        <p>
+          You can set a note to expire in seven, thirty or ninety days. When the date arrives, Scratchd
+          shows you a review sheet and asks whether to keep it or let it go. It does not delete anything
+          on its own.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PRIVACY ============ -->
+    <section class="section" id="privacy">
+      <div class="wrap narrow">
+        <p class="kicker blue">Privacy</p>
+        <h2>What leaves your device, and what does not.</h2>
+        <p>
+          Scratchd has no account and no sign&#8209;up. It contains no analytics, no tracking and no
+          third&#8209;party SDKs.
+        </p>
+        <p>
+          Your notes are in your iCloud Drive. Innovatory does not run a server that stores them. Voice
+          transcription happens on your device. The app makes network requests only for things you set up
+          yourself, such as running an API request you wrote.
+        </p>
+
+        <div class="callout">
+          <p>
+            Scratchd does make outbound requests. All of them are either started by you or switched off
+            until you turn them on. The <a href="privacy/">privacy policy</a> lists each one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="section" id="story">
+      <div class="wrap narrow">
+        <p class="kicker">Version 10</p>
+        <h2>This is version 10. It is the first one for sale.</h2>
+        <p>
+          Scratchd began as a plain Markdown editor. Version 2 added the scratchpad. Later versions added
+          tasks, links, the journal, and the structured viewers for JSON, YAML and Protocol Buffers.
+        </p>
+        <p>
+          The first nine were used every day and never sold. The feature list reflects what got used over
+          those years rather than what was planned.
+        </p>
+
+        <ul class="chips">
+          <li>1 &nbsp;Markdown editor</li>
+          <li>2 &nbsp;Scratchpad</li>
+          <li>&hellip;&nbsp;Tasks</li>
+          <li>&hellip;&nbsp;Links</li>
+          <li>&hellip;&nbsp;Journal</li>
+          <li>&hellip;&nbsp;Structured viewers</li>
+          <li>10 &nbsp;For sale</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2>Questions</h2>
+        <div class="faq">
+
+          <details>
+            <summary>Where are my notes stored?</summary>
+            <p>In a folder you choose in your iCloud Drive, as ordinary files. You can open that folder in Finder or the Files app and see them.</p>
+          </details>
+
+          <details>
+            <summary>Do I need an account?</summary>
+            <p>No. There is nothing to sign up for. Syncing uses your iCloud.</p>
+          </details>
+
+          <details>
+            <summary>What happens if I stop using Scratchd?</summary>
+            <p>You keep the folder. Plain <code>.md</code> and <code>.txt</code> files open in other apps.</p>
+          </details>
+
+          <details>
+            <summary>Does it work with Obsidian, iA Writer, or my editor?</summary>
+            <p>Yes. Point another app at the same folder. Scratchd notices changes made outside it and picks them up.</p>
+          </details>
+
+          <details>
+            <summary>Is my voice recording uploaded?</summary>
+            <p>No. Transcription requires on&#8209;device speech recognition, and if that is not available Scratchd declines rather than falling back to a server.</p>
+          </details>
+
+          <details>
+            <summary>Is there AI in this?</summary>
+            <p>There are two optional features: a suggested journal prompt and a voice&#8209;note summary. Both run on your device using Apple&rsquo;s on&#8209;device models, on the OS versions that support them. Nothing is sent anywhere for processing, and there is no chatbot.</p>
+          </details>
+
+          <details>
+            <summary>Can I use it for code and config?</summary>
+            <p>Yes, and that is much of why it exists. JSON, YAML, <code>.proto</code> and textproto get real previews, and <code>.proto</code> gets a schema viewer with go&#8209;to&#8209;definition.</p>
+          </details>
+
+          <details>
+            <summary>What does it cost?</summary>
+            <p>$4.99 on the Mac, $4.99 on iPhone and iPad, or $8.99 for both. You buy it once. There is no subscription and no in&#8209;app purchase.</p>
+          </details>
+
+          <details>
+            <summary>Why does it say version 10 if it is new?</summary>
+            <p>Because it is the tenth version. It is the first one that has been for sale. It started as a plain Markdown editor and gained a scratchpad, tasks, links, a journal and the structured viewers over the versions since.</p>
+          </details>
+
+          <details>
+            <summary>What do I need to run it?</summary>
+            <p>macOS&nbsp;26, iOS&nbsp;18, watchOS&nbsp;11. Two features need more: CarPlay requires iOS&nbsp;26.4, and voice&#8209;note summaries and the journal&rsquo;s generated reflection require a device that supports Apple&nbsp;Intelligence.</p>
+          </details>
+
+        </div>
+
+        <ul class="reqs" style="margin-top:36px">
+          <li><b>macOS</b> 26 or later</li>
+          <li><b>iOS / iPadOS</b> 18 or later</li>
+          <li><b>watchOS</b> 11 or later</li>
+          <li><b>CarPlay</b> iOS 26.4 or later</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="footer-tag">Scratchd &mdash; capture first, sort it later.</p>
+          <p class="footer-plat">Mac &middot; iPhone &middot; iPad &middot; Apple Watch</p>
+          <p class="footer-plat">$4.99 each &middot; $8.99 for both &middot; bought once, no subscription</p>
+        </div>
+        <div class="footer-links">
+          <a href="support/">Support</a>
+          <a href="privacy/">Privacy</a>
+          <a href="mailto:hello@innovatory.xyz">Contact</a>
+          <a href="../feed.xml">Feed</a>
+          <a href="../">Innovatory</a>
+        </div>
+      </div>
+      <p class="footer-note">
+        Your notes are files in your iCloud. Innovatory does not run a server that holds them.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

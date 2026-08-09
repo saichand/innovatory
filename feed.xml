@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Innovatory</title>
+    <link>https://innovatory.xyz/</link>
+    <description>Releases and news from Innovatory. A small lab for useful tools, sharp ideas, and creative software.</description>
+    <language>en</language>
+    <atom:link href="https://innovatory.xyz/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Aug 2026 20:00:00 GMT</lastBuildDate>
+
+    <!--
+      This feed is the zero-collection way to hear about a launch. Your reader
+      polls this file; nothing is stored, no identifier is minted, and there is
+      no server on this end that could know you subscribed.
+
+      TO ANNOUNCE THE LAUNCH: copy the commented <item> below to the top of the
+      list, set the real date, and push. That is the whole mechanism.
+
+      <item>
+        <title>Scratchd 10.0 is out</title>
+        <link>https://innovatory.xyz/scratchd/</link>
+        <guid isPermaLink="false">innovatory.xyz/scratchd/10.0</guid>
+        <pubDate>REPLACE, e.g. Tue, 01 Sep 2026 16:00:00 GMT</pubDate>
+        <description>Scratchd is on the App Store for Mac, iPhone and iPad. $4.99 each, $8.99 for both, bought once.</description>
+      </item>
+    -->
+
+    <item>
+      <title>Scratchd is coming</title>
+      <link>https://innovatory.xyz/scratchd/</link>
+      <guid isPermaLink="false">innovatory.xyz/scratchd/announce-2026-08-09</guid>
+      <pubDate>Sat, 09 Aug 2026 20:00:00 GMT</pubDate>
+      <description>Scratchd is a notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in your own iCloud Drive, with no account and nothing tracked. It arrives at version 10; the first nine were used every day and never sold. Coming to the App Store at $4.99 per platform, or $8.99 for both, bought once.</description>
+    </item>
+
+  </channel>
+</rss>

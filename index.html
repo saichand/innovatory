@@ -4,16 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innovatory</title>
+  <meta name="description" content="A small lab for useful tools, sharp ideas, and creative software." />
+  <link rel="icon" href="assets/logo-64.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo-256.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Innovatory" href="feed.xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Innovatory" />
+  <meta property="og:description" content="A small lab for useful tools, sharp ideas, and creative software." />
+  <meta property="og:url" content="https://innovatory.xyz/" />
 </head>
 <body>
   <main>
-    <p class="eyebrow">Innovatory</p>
+    <header class="masthead">
+      <img src="assets/logo-128.png" alt="" class="mark" width="44" height="44" />
+      <p class="eyebrow">Innovatory</p>
+    </header>
+
     <h1>A small lab for useful tools, sharp ideas, and creative software.</h1>
     <p class="subtitle">
       Building experiments across developer tools, JSON workflows, AI, and product ideas.
     </p>
+
+    <section class="products" aria-labelledby="products-heading">
+      <h2 id="products-heading">Products</h2>
+
+      <a class="product-card" href="scratchd/">
+        <img src="assets/scratchd/icon-256.png" alt="" class="product-icon" width="72" height="72" loading="lazy" />
+        <div class="product-body">
+          <h3>Scratchd</h3>
+          <p>A capture-first notes app for Mac, iPhone, iPad and Apple&nbsp;Watch. Every note is a plain file in your own iCloud Drive.</p>
+          <p class="product-meta">$4.99 each &middot; $8.99 for both &middot; one&#8209;time, no subscription</p>
+          <span class="product-link">Learn more<span aria-hidden="true"> &rarr;</span></span>
+        </div>
+      </a>
+    </section>
+
     <a href="mailto:hello@innovatory.xyz" class="button">Contact</a>
+    <p class="feed-note">Releases go out on the <a href="feed.xml">feed</a>.</p>
   </main>
 </body>
 </html>
