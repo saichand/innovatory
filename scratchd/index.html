@@ -118,28 +118,42 @@
 
           <figure class="shot">
             <div class="phone"><div class="screen">
-              <img src="../assets/scratchd/shots/iphone-05-json.jpg" alt="JSON rendered as a browsable tree" width="660" height="1434" loading="lazy" />
+              <img src="../assets/scratchd/shots/iphone-05-photos-source.jpg" alt="Markdown source showing photos linked from an images folder" width="660" height="1434" loading="lazy" />
+            </div></div>
+            <figcaption>A photo is a link to a file.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-06-photos-preview.jpg" alt="The same note in preview, with the photos drawn inline" width="660" height="1434" loading="lazy" />
+            </div></div>
+            <figcaption>Preview draws it in place.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="phone"><div class="screen">
+              <img src="../assets/scratchd/shots/iphone-07-json.jpg" alt="JSON rendered as a browsable tree" width="660" height="1434" loading="lazy" />
             </div></div>
             <figcaption>JSON that reads like JSON.</figcaption>
           </figure>
 
           <figure class="shot">
             <div class="phone"><div class="screen">
-              <img src="../assets/scratchd/shots/iphone-06-tasks.jpg" alt="Tasks, natural&#8209;language entry" width="660" height="1434" loading="lazy" />
+              <img src="../assets/scratchd/shots/iphone-08-tasks.jpg" alt="Tasks, natural&#8209;language entry" width="660" height="1434" loading="lazy" />
             </div></div>
             <figcaption>Plain English becomes a task.</figcaption>
           </figure>
 
           <figure class="shot">
             <div class="phone"><div class="screen">
-              <img src="../assets/scratchd/shots/iphone-07-sticky.jpg" alt="Sticky note board" width="660" height="1434" loading="lazy" />
+              <img src="../assets/scratchd/shots/iphone-09-sticky.jpg" alt="Sticky note board" width="660" height="1434" loading="lazy" />
             </div></div>
             <figcaption>Room for the messy stage.</figcaption>
           </figure>
 
           <figure class="shot">
             <div class="phone"><div class="screen">
-              <img src="../assets/scratchd/shots/iphone-08-journal.jpg" alt="Journal prompt with the mood picker" width="660" height="1434" loading="lazy" />
+              <img src="../assets/scratchd/shots/iphone-10-journal.jpg" alt="Journal prompt with the mood picker" width="660" height="1434" loading="lazy" />
             </div></div>
             <figcaption>A journal that doesn&rsquo;t nag.</figcaption>
           </figure>
@@ -181,6 +195,11 @@
             You can search them with grep, open them in another editor, or keep the folder in a git repo.
             Scratchd reads the folder on launch and reconciles against what is on disk, so a note you
             edited somewhere else is picked up rather than overwritten.
+          </p>
+          <p>
+            Photos work the same way. A photo you add is copied into an <code>images</code> folder beside
+            the note and referenced with an ordinary Markdown image link, so the note still reads as
+            Markdown in any other editor and the photo is still a photo you can open.
           </p>
           <p>
             If you stop using Scratchd, the folder stays where it is and everything in it still opens in
