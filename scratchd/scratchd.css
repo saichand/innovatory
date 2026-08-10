@@ -258,9 +258,6 @@ kbd {
   white-space: nowrap;
 }
 
-.feed-line { margin-top: 6px; }
-.feed-line a { color: var(--cream-dim); }
-
 .availability .dot {
   display: inline-block;
   width: 6px; height: 6px;
@@ -325,7 +322,9 @@ kbd {
 .split.reverse .split-visual { order: -1; }
 
 @media (max-width: 860px) {
-  .split { grid-template-columns: 1fr; }
+  /* minmax(0, …) rather than a bare 1fr: the default auto minimum lets the
+     terminal block's non-wrapping <pre> push the track past the viewport. */
+  .split { grid-template-columns: minmax(0, 1fr); }
   .split.reverse .split-visual { order: 0; }
 }
 
@@ -724,10 +723,23 @@ kbd {
 .doc ul, .doc ol { padding-left: 22px; }
 .doc li { margin-bottom: 8px; }
 
+/* Narrow screens cannot fit these tables. Let the table scroll inside its
+   wrapper rather than widening the page. */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  scrollbar-width: thin;
+}
+
+.table-wrap::-webkit-scrollbar { height: 8px; }
+.table-wrap::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+
 .doc table {
   width: 100%;
+  min-width: 460px;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 0;
   font-size: 15px;
 }
 
