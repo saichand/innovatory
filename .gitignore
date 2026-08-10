@@ -1,3 +1,9 @@
 .DS_Store
+
+# Raw captures and working artifacts. The web-sized copies under
+# assets/scratchd/shots/ are the ones the site actually uses.
 assets/scratchd/Screenshot*
+assets/scratchd/SCR-*
 assets/scratchd/_raw-*
+assets/scratchd/_contact-sheet.png
+assets/scratchd/_sheet*.png

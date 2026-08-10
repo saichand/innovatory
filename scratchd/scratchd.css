@@ -426,7 +426,23 @@ kbd {
   z-index: 2;
 }
 
-/* Mac window */
+/* Mac shots are full window captures — they already carry their own title bar,
+   traffic lights and shadow, composited onto the page background. Drawing a
+   second frame around them would double the chrome, so this is just a box. */
+.macshot {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.macshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shot.wide { width: clamp(320px, 46vw, 520px); }
+
+/* Kept for the placeholder slots that have no screenshot yet. */
 .mac {
   position: relative;
   border-radius: 12px;
@@ -445,9 +461,7 @@ kbd {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.mac .titlebar i {
-  width: 11px; height: 11px; border-radius: 50%; display: block;
-}
+.mac .titlebar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
 .mac .titlebar i:nth-child(1) { background: #ff5f57; }
 .mac .titlebar i:nth-child(2) { background: #febc2e; }
 .mac .titlebar i:nth-child(3) { background: #28c840; }
