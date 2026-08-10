@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scratchd — capture first, sort it later</title>
-  <meta name="description" content="Scratchd is a notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in your own iCloud Drive. No account, no tracking." />
+  <meta name="description" content="Scratchd is a notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in a folder you choose. No account, no tracking." />
   <link rel="canonical" href="https://innovatory.xyz/scratchd/" />
   <link rel="icon" href="../assets/scratchd/icon-128.png" type="image/png" />
   <link rel="apple-touch-icon" href="../assets/scratchd/icon-256.png" />
@@ -13,7 +13,7 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Scratchd — capture first, sort it later" />
-  <meta property="og:description" content="A notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in your own iCloud Drive." />
+  <meta property="og:description" content="A notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in a folder you choose." />
   <meta property="og:url" content="https://innovatory.xyz/scratchd/" />
   <meta property="og:image" content="https://innovatory.xyz/assets/scratchd/icon-512.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -26,6 +26,13 @@
     "applicationCategory": "ProductivityApplication",
     "operatingSystem": "macOS 26, iOS 18, watchOS 11",
     "url": "https://innovatory.xyz/scratchd/",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "4.99",
+      "highPrice": "8.99",
+      "offerCount": 3
+    },
     "author": { "@type": "Organization", "name": "Innovatory", "url": "https://innovatory.xyz/" }
   }
   </script>
@@ -42,6 +49,8 @@
       <div class="nav-links">
         <a href="#files" class="optional">Files</a>
         <a href="#formats" class="optional">Formats</a>
+        <a href="#capture" class="optional">Capture</a>
+        <a href="#wrist-and-car" class="optional">Watch &amp; Car</a>
         <a href="#privacy">Privacy</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -58,7 +67,7 @@
         <h1>Write it down before you decide where it goes.</h1>
         <p class="hero-sub">
           Scratchd is a notes app for Mac, iPhone, iPad and Apple&nbsp;Watch. Every note is a
-          <strong>plain file in your own iCloud Drive</strong>. There is no account, and nothing is tracked.
+          <strong>plain file in a folder you choose</strong>. There is no account, and nothing is tracked.
         </p>
 
         <!-- PRE-LAUNCH CTAs. ON LAUNCH: swap the primary for the App Store links
@@ -75,7 +84,7 @@
 
         <p class="availability">
           <span class="dot" aria-hidden="true"></span>
-          Coming soon. Mac $4.99, iPhone &amp; iPad $4.99, both for $8.99. Bought once, no subscription.
+          Coming soon. $4.99 each, $8.99 for both. Bought once, no subscription.
         </p>
       </div>
     </header>
@@ -87,16 +96,16 @@
 
           <figure class="shot">
             <div class="phone"><div class="screen">
-              <img src="../assets/scratchd/shots/iphone-01-capture.jpg" alt="Scratchpad with the jot field open" width="660" height="1434" loading="lazy" />
+              <img src="../assets/scratchd/shots/iphone-01-inbox.jpg" alt="Inbox with mixed note types" width="660" height="1434" loading="lazy" />
             </div></div>
-            <figcaption>Type first. Decide later.</figcaption>
+            <figcaption>One inbox. Filing is optional.</figcaption>
           </figure>
 
           <figure class="shot">
             <div class="phone"><div class="screen">
-              <img src="../assets/scratchd/shots/iphone-02-inbox.jpg" alt="Inbox with mixed note types" width="660" height="1434" loading="lazy" />
+              <img src="../assets/scratchd/shots/iphone-02-capture.jpg" alt="Scratchpad with the jot field open" width="660" height="1434" loading="lazy" />
             </div></div>
-            <figcaption>One inbox. Filing is optional.</figcaption>
+            <figcaption>Type first. Decide later.</figcaption>
           </figure>
 
           <figure class="shot">
@@ -185,8 +194,9 @@
           <p>
             Scratchd stores notes as plain files &mdash; <code>.md</code>, <code>.txt</code>,
             <code>.json</code>, <code>.yaml</code>, <code>.proto</code>, textproto and more &mdash; in a
-            folder you pick in your own iCloud Drive. They are not rows in a database that only Scratchd
-            can read.
+            folder you pick. Most people leave it in iCloud&nbsp;Drive so it follows them between
+            devices, but any folder works, including one that never leaves the machine. They are not rows
+            in a database that only Scratchd can read.
           </p>
           <p>
             You can search them with grep, open them in another editor, or keep the folder in a git repo.
@@ -318,7 +328,7 @@
           <li>Share sheet on Mac and iPhone, for links, screenshots and selected text</li>
           <li>Home Screen widget with tiles for note, task, link and journal</li>
           <li>Siri and Shortcuts</li>
-          <li>Apple Watch, for voice notes and journal entries</li>
+          <li>Apple Watch, which writes a note straight into your library, as well as voice notes and journal entries</li>
           <li>CarPlay, which reads a note aloud and records your reply back into it. Requires iOS&nbsp;26.4</li>
           <li><kbd>&#8963;&#8997;&nbsp;Space</kbd> on the Mac. macOS asks for Input&nbsp;Monitoring the first time. Scratchd watches for that one shortcut and no other key</li>
           <li>Shake the mouse on the Mac. No permission needed, and off until you switch it on</li>
@@ -331,11 +341,12 @@
     <section class="section" id="wrist-and-car">
       <div class="wrap narrow">
         <p class="kicker blue">Watch &amp; CarPlay</p>
-        <h2>Two places where you cannot type.</h2>
+        <h2>On your wrist, and in your car.</h2>
         <p>
-          The Apple&nbsp;Watch app records a voice note or a journal entry from your wrist. It transfers
-          to your iPhone, where it is transcribed on device and written into your library. If your phone
-          is out of range, the entry waits and retries.
+          The Apple&nbsp;Watch app adds a note from your wrist, and records voice notes and journal
+          entries too. Anything captured there transfers to your iPhone, where it is written into your
+          library, and voice is transcribed on device on the way. If your phone is out of range, the
+          entry waits and retries.
         </p>
         <p>
           Scratchd also appears in CarPlay, and it is a conversation rather than a list you poke at.
@@ -369,7 +380,7 @@
           third&#8209;party SDKs.
         </p>
         <p>
-          Your notes are in your iCloud Drive. Innovatory does not run a server that stores them. Voice
+          Your notes are in your own folder. Innovatory does not run a server that stores them. Voice
           notes are processed on your device. The app makes network requests only for things you set up
           yourself, such as running an API request you wrote.
         </p>
@@ -417,12 +428,12 @@
 
           <details>
             <summary>Where are my notes stored?</summary>
-            <p>In a folder you choose in your iCloud Drive, as ordinary files. You can open that folder in Finder or the Files app and see them.</p>
+            <p>In a folder you choose, as ordinary files. The default is a folder in your iCloud&nbsp;Drive, but you can point Scratchd anywhere &mdash; including a folder that stays on one machine. Open it in Finder or the Files app and the notes are just there.</p>
           </details>
 
           <details>
             <summary>Do I need an account?</summary>
-            <p>No. There is nothing to sign up for. Syncing uses your iCloud.</p>
+            <p>No. There is nothing to sign up for, and no Scratchd account exists to make. Syncing, if you want it, is your own iCloud&nbsp;Drive doing the work &mdash; so it follows from where you put the folder. Choose a folder outside iCloud&nbsp;Drive and nothing syncs; the notes stay on that device.</p>
           </details>
 
           <details>
@@ -494,7 +505,7 @@
         </div>
       </div>
       <p class="footer-note">
-        Your notes are files in your iCloud. Innovatory does not run a server that holds them.
+        Your notes are files in a folder you chose. Innovatory does not run a server that holds them.
       </p>
     </div>
   </footer>
