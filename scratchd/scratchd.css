@@ -402,7 +402,7 @@ kbd {
 .phone .screen {
   position: relative;
   width: 100%;
-  aspect-ratio: 1206 / 2622;   /* iPhone 16 Pro, matching the captures */
+  aspect-ratio: 1320 / 2868;   /* iPhone 6.9", matching the captures */
   border-radius: 11%/5%;
   overflow: hidden;
   background: #0d0d10;
