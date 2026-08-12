@@ -1,6 +1,14 @@
 /* Scratchd — innovatory.xyz/scratchd/
    Palette sampled from the app icon: cream #F0DFC4 on near-black,
-   with the three scratch slashes as accents (red, gold, blue). */
+   with the three scratch slashes as accents (red, gold, blue).
+
+   Two themes. theme.js resolves the reader's auto/light/dark preference
+   before first paint and puts the result on <html data-theme>, so this
+   file only ever deals with one theme being in force at a time.
+
+   --cream is the heading colour, not a literal cream, and inverts to a
+   deep warm brown in light. Anything that renders a device or a terminal
+   —.phone, .mac, .term — stays dark in both themes on purpose. */
 
 :root {
   color-scheme: dark;
@@ -11,7 +19,7 @@
   --cream-dim: #cbbda6;
   --text:      #ededf0;
   --muted:     #9a9aa3;
-  --faint:     #6c6c76;
+  --faint:     #7a7a84;
   --line:      rgba(240, 223, 196, 0.13);
   --line-soft: rgba(255, 255, 255, 0.075);
 
@@ -19,11 +27,61 @@
   --gold:  #f5b833;
   --blue:  #2b8fdd;
 
+  --link:         var(--cream);
+  --nav-bg:       rgba(9, 9, 11, 0.72);
+  --btn-bg:       var(--cream);
+  --btn-fg:       #0b0b0d;
+  --btn-bg-hover: #fff2dd;
+  --wash:         rgba(255, 255, 255, 0.03);
+  --wash-strong:  rgba(255, 255, 255, 0.06);
+  --wash-warm:    rgba(240, 223, 196, 0.045);
+  --wash-warm-up: rgba(240, 223, 196, 0.09);
+  --scroll-thumb: rgba(255, 255, 255, 0.12);
+  --hero-wash:    1;
+  --icon-ring:    rgba(255, 255, 255, 0.07);
+  --shadow-icon:  0 14px 38px rgba(0, 0, 0, 0.65);
+  --shadow-device:    0 16px 44px rgba(0, 0, 0, 0.6);
+  --shadow-device-lg: 0 22px 60px rgba(0, 0, 0, 0.62);
+
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Inter, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --measure: 62ch;
   --pad: clamp(20px, 5vw, 40px);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg:        #faf8f4;
+  --bg-raised: #ffffff;
+  --cream:     #2f2416;
+  --cream-dim: #6b5a41;
+  --text:      #1b1b1f;
+  --muted:     #55555e;
+  --faint:     #70707a;
+  --line:      rgba(47, 36, 22, 0.17);
+  --line-soft: rgba(24, 20, 12, 0.1);
+
+  --red:   #bd3f03;
+  --gold:  #8a6412;
+  --blue:  #14639d;
+
+  --link:         #a8420a;
+  --nav-bg:       rgba(250, 248, 244, 0.84);
+  --btn-bg:       #23201a;
+  --btn-fg:       #faf8f4;
+  --btn-bg-hover: #3a352c;
+  --wash:         rgba(24, 20, 12, 0.028);
+  --wash-strong:  rgba(24, 20, 12, 0.06);
+  --wash-warm:    rgba(47, 36, 22, 0.045);
+  --wash-warm-up: rgba(47, 36, 22, 0.075);
+  --scroll-thumb: rgba(24, 20, 12, 0.2);
+  --hero-wash:    0.5;
+  --icon-ring:    rgba(24, 20, 12, 0.1);
+  --shadow-icon:  0 14px 30px rgba(43, 34, 20, 0.18);
+  --shadow-device:    0 16px 40px rgba(43, 34, 20, 0.2);
+  --shadow-device-lg: 0 22px 54px rgba(43, 34, 20, 0.22);
 }
 
 * { box-sizing: border-box; }
@@ -41,7 +99,7 @@ body {
   overflow-x: hidden;
 }
 
-a { color: var(--cream); }
+a { color: var(--link); }
 
 .wrap {
   width: 100%;
@@ -75,7 +133,7 @@ a { color: var(--cream); }
   z-index: 50;
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
-  background: rgba(9, 9, 11, 0.72);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--line-soft);
 }
 
@@ -111,7 +169,13 @@ a { color: var(--cream); }
 .nav-links a:hover { color: var(--text); }
 
 @media (max-width: 620px) {
+  /* The theme switch is ~100px of the nav row, so the narrow layout drops the
+     secondary links and the wordmark rather than letting the bar overflow. */
   .nav-links a.optional { display: none; }
+  .nav-home .nav-word { display: none; }
+  .nav-inner { gap: 10px; }
+  .nav-links { gap: 16px; }
+  .theme-switch button { width: 27px; height: 24px; }
 }
 
 /* ---------- Hero ---------- */
@@ -134,6 +198,7 @@ a { color: var(--cream); }
     radial-gradient(44% 38% at 52% 50%, rgba(245, 184, 51, 0.14), transparent 70%),
     radial-gradient(46% 40% at 70% 58%, rgba(43, 143, 221, 0.15), transparent 70%);
   filter: blur(28px);
+  opacity: var(--hero-wash);
   pointer-events: none;
   z-index: 0;
 }
@@ -144,7 +209,7 @@ a { color: var(--cream); }
   width: 84px;
   height: 84px;
   border-radius: 19px;
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  box-shadow: var(--shadow-icon), 0 0 0 1px var(--icon-ring);
   margin-bottom: 16px;
 }
 
@@ -201,17 +266,17 @@ a { color: var(--cream); }
 .btn:hover { transform: translateY(-1px); }
 
 .btn-primary {
-  background: var(--cream);
-  color: #0b0b0d;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
 }
-.btn-primary:hover { background: #fff2dd; }
+.btn-primary:hover { background: var(--btn-bg-hover); }
 
 .btn-ghost {
   border-color: var(--line);
   color: var(--text);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--wash);
 }
-.btn-ghost:hover { border-color: rgba(240, 223, 196, 0.36); background: rgba(255, 255, 255, 0.06); }
+.btn-ghost:hover { border-color: var(--cream-dim); background: var(--wash-strong); }
 
 /* pre-launch: buttons are inert placeholders, styled to look it */
 .btn[aria-disabled="true"] {
@@ -251,7 +316,7 @@ kbd {
   font-size: 0.9em;
   font-weight: 650;
   color: var(--cream-dim);
-  background: rgba(240, 223, 196, 0.09);
+  background: var(--wash-warm-up);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1px 7px;
@@ -373,7 +438,7 @@ kbd {
 }
 
 .shots::-webkit-scrollbar { height: 8px; }
-.shots::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+.shots::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 99px; }
 
 .shot {
   flex: none;
@@ -395,7 +460,7 @@ kbd {
   border-radius: 13%/6%;
   padding: 8px;
   background: linear-gradient(160deg, #2a2a2e, #131316 60%, #232327);
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-device), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .phone .screen {
@@ -441,13 +506,13 @@ kbd {
 
 .shot.wide { width: clamp(320px, 46vw, 520px); }
 
-/* Kept for the placeholder slots that have no screenshot yet. */
+/* Window chrome for a Mac shot. Stays dark in both themes. */
 .mac {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   background: #17171a;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  box-shadow: var(--shadow-device-lg), 0 0 0 1px rgba(255, 255, 255, 0.07);
 }
 
 .mac .titlebar {
@@ -481,53 +546,6 @@ kbd {
   object-position: top center;
 }
 
-/* The placeholder that sits in a screen until a real screenshot is dropped in.
-   Delete the <div class="slot"> and add <img> — nothing else changes. */
-.slot {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: center;
-  padding: 14px;
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      rgba(255,255,255,0.022) 0 10px,
-      transparent 10px 20px
-    ),
-    #0e0e11;
-  border: 1px dashed rgba(240, 223, 196, 0.24);
-  color: var(--faint);
-}
-
-.slot .slot-n {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--cream-dim);
-  opacity: 0.85;
-}
-
-.slot .slot-what {
-  font-size: 12.5px;
-  line-height: 1.35;
-  color: var(--muted);
-  max-width: 22ch;
-}
-
-.slot .slot-file {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--faint);
-  word-break: break-all;
-}
-
-.mac .slot .slot-what { max-width: 34ch; font-size: 13px; }
-
 /* ---------- Format chips ---------- */
 
 .chips {
@@ -546,7 +564,7 @@ kbd {
   border-radius: 8px;
   border: 1px solid var(--line);
   color: var(--cream-dim);
-  background: rgba(240, 223, 196, 0.045);
+  background: var(--wash-warm);
 }
 
 /* ---------- Callout ---------- */
@@ -568,7 +586,7 @@ kbd {
 .term {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--line-soft);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: #0c0c0f;
   box-shadow: 0 18px 46px rgba(0,0,0,0.5);
   font-family: var(--mono);
@@ -586,20 +604,20 @@ kbd {
 .term-bar i:nth-child(1) { background: #ff5f57; }
 .term-bar i:nth-child(2) { background: #febc2e; }
 .term-bar i:nth-child(3) { background: #28c840; }
-.term-bar span { margin-left: 6px; font-size: 11px; color: var(--faint); letter-spacing: 0.04em; }
+.term-bar span { margin-left: 6px; font-size: 11px; color: #7a7a84; letter-spacing: 0.04em; }
 
 .term pre {
   margin: 0;
   padding: 16px 18px;
   overflow-x: auto;
-  color: var(--muted);
+  color: #9a9aa3;
   white-space: pre;
 }
 
-.term .p  { color: var(--blue); }
-.term .c  { color: var(--cream); }
-.term .g  { color: var(--gold); }
-.term .dim { color: var(--faint); }
+.term .p  { color: #2b8fdd; }
+.term .c  { color: #f0dfc4; }
+.term .g  { color: #f5b833; }
+.term .dim { color: #7a7a84; }
 
 /* ---------- FAQ ---------- */
 
@@ -733,7 +751,7 @@ kbd {
 }
 
 .table-wrap::-webkit-scrollbar { height: 8px; }
-.table-wrap::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+.table-wrap::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 99px; }
 
 .doc table {
   width: 100%;
@@ -762,7 +780,7 @@ kbd {
 .doc code {
   font-family: var(--mono);
   font-size: 0.88em;
-  background: rgba(255,255,255,0.06);
+  background: var(--wash-strong);
   padding: 2px 6px;
   border-radius: 5px;
   color: var(--cream-dim);
@@ -772,7 +790,7 @@ kbd {
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 24px;
-  background: rgba(240, 223, 196, 0.04);
+  background: var(--wash-warm);
   margin: 26px 0;
   max-width: var(--measure);
 }
@@ -784,3 +802,56 @@ kbd {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Theme switch ----------
+   Built by theme.js and mounted into [data-theme-mount]. Three states:
+   match the system, force light, force dark. */
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--wash);
+}
+
+.theme-switch button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 26px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--faint);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.theme-switch button:hover { color: var(--text); }
+
+.theme-switch button[aria-checked="true"] {
+  background: var(--wash-strong);
+  color: var(--cream);
+}
+
+.theme-switch button:focus-visible {
+  outline: 2px solid var(--cream-dim);
+  outline-offset: 2px;
+}
+
+.theme-switch svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* On the Innovatory home page the switch sits at the end of the masthead. */
+.masthead .theme-mount { margin-left: auto; }

@@ -1,6 +1,42 @@
 :root {
   color-scheme: dark;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+
+  --bg:        #09090b;
+  --text:      #ffffff;
+  --muted:     #a1a1aa;
+  --faint:     #7a7a84;
+  --accent:    #93c5fd;
+  --cream:     #f0dfc4;
+  --wash:      rgba(255, 255, 255, 0.028);
+  --wash-up:   rgba(255, 255, 255, 0.05);
+  --line:      rgba(255, 255, 255, 0.1);
+  --line-soft: rgba(255, 255, 255, 0.11);
+  --glow:      rgba(59, 130, 246, 0.25);
+  --btn-bg:    #ffffff;
+  --btn-fg:    #09090b;
+  --card-hover-border: rgba(240, 223, 196, 0.4);
+  --icon-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg:        #faf8f4;
+  --text:      #17171b;
+  --muted:     #55555e;
+  --faint:     #70707a;
+  --accent:    #1d5fa8;
+  --cream:     #8a5a1c;
+  --wash:      rgba(24, 20, 12, 0.03);
+  --wash-up:   rgba(24, 20, 12, 0.055);
+  --line:      rgba(24, 20, 12, 0.13);
+  --line-soft: rgba(24, 20, 12, 0.14);
+  --glow:      rgba(59, 130, 246, 0.14);
+  --btn-bg:    #23201a;
+  --btn-fg:    #faf8f4;
+  --card-hover-border: rgba(138, 90, 28, 0.5);
+  --icon-shadow: 0 6px 18px rgba(43, 34, 20, 0.16);
 }
 
 * { box-sizing: border-box; }
@@ -9,9 +45,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 35%),
-    #09090b;
-  color: white;
+    radial-gradient(circle at top left, var(--glow), transparent 35%),
+    var(--bg);
+  color: var(--text);
   display: grid;
   place-items: center;
 }
@@ -20,6 +56,9 @@ main {
   max-width: 760px;
   padding: 48px 24px 72px;
   width: 100%;
+  /* body is a grid; without this the auto minimum lets the masthead row
+     widen the page on narrow screens. */
+  min-width: 0;
 }
 
 .masthead {
@@ -27,6 +66,12 @@ main {
   align-items: center;
   gap: 12px;
   margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 420px) {
+  .eyebrow { font-size: 12px; }
+  .theme-switch button { width: 27px; height: 24px; }
 }
 
 .mark {
@@ -36,7 +81,7 @@ main {
 }
 
 .eyebrow {
-  color: #93c5fd;
+  color: var(--accent);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -52,7 +97,7 @@ h1 {
 }
 
 .subtitle {
-  color: #a1a1aa;
+  color: var(--muted);
   font-size: 21px;
   line-height: 1.5;
   max-width: 620px;
@@ -62,7 +107,7 @@ h1 {
 
 .products {
   margin: 56px 0 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--line);
   padding-top: 28px;
 }
 
@@ -71,7 +116,7 @@ h1 {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #71717a;
+  color: var(--faint);
   margin: 0 0 18px;
 }
 
@@ -80,9 +125,9 @@ h1 {
   gap: 20px;
   align-items: flex-start;
   padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid var(--line-soft);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.028);
+  background: var(--wash);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
@@ -90,8 +135,8 @@ h1 {
 
 .product-card:hover,
 .product-card:focus-visible {
-  border-color: rgba(240, 223, 196, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--card-hover-border);
+  background: var(--wash-up);
   transform: translateY(-2px);
 }
 
@@ -100,7 +145,7 @@ h1 {
   height: 72px;
   border-radius: 16px;
   flex: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--icon-shadow);
 }
 
 .product-body h3 {
@@ -111,7 +156,7 @@ h1 {
 
 .product-body p {
   margin: 0 0 12px;
-  color: #a1a1aa;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.55;
   max-width: 46ch;
@@ -120,13 +165,13 @@ h1 {
 .product-body .product-meta {
   margin: -4px 0 12px;
   font-size: 14px;
-  color: #71717a;
+  color: var(--faint);
 }
 
 .product-link {
   font-size: 15px;
   font-weight: 600;
-  color: #f0dfc4;
+  color: var(--cream);
 }
 
 .button {
@@ -134,8 +179,8 @@ h1 {
   margin-top: 20px;
   padding: 14px 20px;
   border-radius: 999px;
-  background: white;
-  color: #09090b;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
   text-decoration: none;
   font-weight: 700;
 }
@@ -152,7 +197,53 @@ h1 {
 .feed-note {
   margin: 22px 0 0;
   font-size: 14px;
-  color: #71717a;
+  color: var(--faint);
 }
 
-.feed-note a { color: #f0dfc4; }
+.feed-note a { color: var(--cream); }
+
+/* ---------- Theme switch ---------- */
+
+.masthead .theme-mount { margin-left: auto; }
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--wash);
+}
+
+.theme-switch button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 26px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--faint);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.theme-switch button:hover { color: var(--text); }
+
+.theme-switch button[aria-checked="true"] {
+  background: var(--wash-up);
+  color: var(--cream);
+}
+
+.theme-switch button:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 2px;
+}
+
+.theme-switch svg { width: 15px; height: 15px; display: block; }
