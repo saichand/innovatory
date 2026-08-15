@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scratchd — capture first, sort it later</title>
-  <meta name="description" content="Scratchd is a notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in a folder you choose. No account, no tracking." />
+  <meta name="description" content="Scratchd is a notes app for Mac, iPhone, iPad and Apple Watch. Everything it keeps is a file in a folder you choose. No account, no tracking." />
   <link rel="canonical" href="https://innovatory.xyz/scratchd/" />
   <link rel="icon" href="../assets/scratchd/icon-128.png" type="image/png" />
   <link rel="apple-touch-icon" href="../assets/scratchd/icon-256.png" />
@@ -15,7 +15,7 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Scratchd — capture first, sort it later" />
-  <meta property="og:description" content="A notes app for Mac, iPhone, iPad and Apple Watch. Every note is a plain file in a folder you choose." />
+  <meta property="og:description" content="A notes app for Mac, iPhone, iPad and Apple Watch. Everything it keeps is a file in a folder you choose." />
   <meta property="og:url" content="https://innovatory.xyz/scratchd/" />
   <meta property="og:image" content="https://innovatory.xyz/assets/scratchd/icon-512.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -32,8 +32,8 @@
       "@type": "AggregateOffer",
       "priceCurrency": "USD",
       "lowPrice": "4.99",
-      "highPrice": "8.99",
-      "offerCount": 3
+      "highPrice": "4.99",
+      "offerCount": 2
     },
     "author": { "@type": "Organization", "name": "Innovatory", "url": "https://innovatory.xyz/" }
   }
@@ -50,8 +50,8 @@
       </a>
       <div class="nav-links">
         <a href="#files" class="optional">Files</a>
-        <a href="#formats" class="optional">Formats</a>
         <a href="#capture" class="optional">Capture</a>
+        <a href="#formats" class="optional">Formats</a>
         <a href="#wrist-and-car" class="optional">Watch &amp; Car</a>
         <a href="#privacy">Privacy</a>
         <a href="#faq">FAQ</a>
@@ -69,8 +69,8 @@
         <p class="wordmark">Scratchd</p>
         <h1>Write it down before you decide where it goes.</h1>
         <p class="hero-sub">
-          Scratchd is a notes app for Mac, iPhone, iPad and Apple&nbsp;Watch. Every note is a
-          <strong>plain file in a folder you choose</strong>. There is no account, and nothing is tracked.
+          Scratchd is a notes app for Mac, iPhone, iPad and Apple&nbsp;Watch. Everything it keeps is a
+          <strong>file in a folder you choose</strong>. There is no account, and nothing is tracked.
         </p>
 
         <!-- PRE-LAUNCH CTAs. ON LAUNCH: swap the primary for the App Store links
@@ -87,7 +87,7 @@
 
         <p class="availability">
           <span class="dot" aria-hidden="true"></span>
-          Coming soon. $4.99 for Mac, $4.99 for iPhone, iPad and Watch, $8.99 for both. Bought once, no subscription.
+          Coming soon. $4.99 for Mac, $4.99 for iPhone, iPad and Watch. Bought once, no subscription.
         </p>
       </div>
     </header>
@@ -115,7 +115,7 @@
             <div class="phone"><div class="screen">
               <img src="../assets/scratchd/shots/iphone-03-types.jpg" alt="The new&#8209;note menu listing every note type" width="660" height="1434" loading="lazy" />
             </div></div>
-            <figcaption>Eleven kinds of note.</figcaption>
+            <figcaption>Text unless you say otherwise.</figcaption>
           </figure>
 
           <figure class="shot">
@@ -195,11 +195,15 @@
           <p class="kicker gold">Ownership</p>
           <h2>Your notes are files in a folder you chose.</h2>
           <p>
-            Scratchd stores notes as plain files &mdash; <code>.md</code>, <code>.txt</code>,
-            <code>.json</code>, <code>.yaml</code>, <code>.proto</code>, textproto and more &mdash; in a
-            folder you pick. Most people leave it in iCloud&nbsp;Drive so it follows them between
-            devices, but any folder works, including one that never leaves the machine. They are not rows
-            in a database that only Scratchd can read.
+            Scratchd stores notes as files in a folder you pick. Most people leave it in
+            iCloud&nbsp;Drive so it follows them between devices, but any folder works, including one
+            that never leaves the machine. They are not rows in a database that only Scratchd can read.
+          </p>
+          <p>
+            Nearly all of them are plain text you can read anywhere: <code>.md</code>,
+            <code>.txt</code>, <code>.json</code>, <code>.yaml</code>, <code>.proto</code> and
+            textproto, with sticky boards and canvases stored as JSON. A drawing is the exception. Its
+            file points at the artwork, which is written beside it as an SVG so it opens in anything.
           </p>
           <p>
             You can search them with grep, open them in another editor, or keep the folder in a git repo.
@@ -232,6 +236,30 @@
 </pre>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPTURE ============ -->
+    <section class="section" id="capture">
+      <div class="wrap narrow">
+        <p class="kicker red">Everywhere</p>
+        <h2>Capture from wherever you are.</h2>
+        <p>
+          Whatever you are in the middle of, there is a way in that does not start with finding the app.
+          Voice notes are transcribed on your device; if a device cannot do that locally, Scratchd says so
+          rather than uploading your audio.
+        </p>
+
+        <ul class="bullets">
+          <li>Share sheet on Mac and iPhone</li>
+          <li>Home Screen widget</li>
+          <li>Siri and Shortcuts</li>
+          <li>Apple Watch, for notes, voice notes and journal entries</li>
+          <li>CarPlay, where picking a note starts a recording into it</li>
+          <li><kbd>&#8963;&#8997;&nbsp;Space</kbd> on the Mac, over whatever you are using</li>
+          <li>Shake the mouse on the Mac, which needs no permission at all</li>
+          <li>Today&rsquo;s scratchpad, one step away on every platform</li>
+        </ul>
       </div>
     </section>
 
@@ -304,27 +332,26 @@
       </div>
     </section>
 
-    <!-- ============ CAPTURE ============ -->
-    <section class="section" id="capture">
+    <!-- ============ TASKS, LINKS, JOURNAL ============ -->
+    <section class="section" id="the-rest">
       <div class="wrap narrow">
-        <p class="kicker red">Everywhere</p>
-        <h2>Capture from wherever you are.</h2>
+        <p class="kicker red">Tasks, links, journal</p>
+        <h2>The other things you keep are files too.</h2>
         <p>
-          Whatever you are in the middle of, there is a way in that does not start with finding the app.
-          Voice notes are transcribed on your device; if a device cannot do that locally, Scratchd says so
-          rather than uploading your audio.
+          Tasks live in <code>tasks/</code>, saved links in <code>links/</code> and journal days in
+          <code>journal/</code>, in the same library as your notes. Nothing is in a separate database,
+          so the folder you back up holds all of it.
         </p>
-
-        <ul class="bullets">
-          <li>Share sheet on Mac and iPhone</li>
-          <li>Home Screen widget</li>
-          <li>Siri and Shortcuts</li>
-          <li>Apple Watch, for notes, voice notes and journal entries</li>
-          <li>CarPlay, where picking a note starts a recording into it</li>
-          <li><kbd>&#8963;&#8997;&nbsp;Space</kbd> on the Mac, over whatever you are using</li>
-          <li>Shake the mouse on the Mac, which needs no permission at all</li>
-          <li>Today&rsquo;s scratchpad, one step away on every platform</li>
-        </ul>
+        <p>
+          Tasks take plain English. Type &ldquo;buy groceries by Friday #errands @Personal&rdquo; and
+          Scratchd works out the date and the list. There are checklists and sub&#8209;lists, a Today
+          view, an Evening flag, recurring tasks and a logbook of what you finished.
+        </p>
+        <p>
+          The journal has optional morning and evening prompts, a mood you tap in a second, focus areas
+          you chose yourself, and photos. You can back&#8209;date an entry to any day in the last month.
+          Reminders are local, at times you set, and there are no streaks to keep up.
+        </p>
       </div>
     </section>
 
@@ -458,7 +485,7 @@
 
           <details>
             <summary>What does it cost?</summary>
-            <p>There are two apps. The Mac app is $4.99. The iPhone app is $4.99 and covers iPad and Apple&nbsp;Watch as well, so there is nothing further to buy for those. Both together are $8.99. You buy it once &mdash; there is no subscription and no in&#8209;app purchase.</p>
+            <p>There are two apps. The Mac app is $4.99. The iPhone app is $4.99 and covers iPad and Apple&nbsp;Watch as well, so there is nothing further to buy for those. A bundle covering both at $8.99 is planned, and can only appear on the App&nbsp;Store once both apps are live. You buy it once &mdash; there is no subscription and no in&#8209;app purchase.</p>
           </details>
 
           <details>
@@ -489,7 +516,7 @@
         <div>
           <p class="footer-tag">Scratchd &mdash; capture first, sort it later.</p>
           <p class="footer-plat">Mac &middot; iPhone &middot; iPad &middot; Apple Watch</p>
-          <p class="footer-plat">Mac $4.99 &middot; iPhone, iPad &amp; Watch $4.99 &middot; $8.99 for both &middot; bought once, no subscription</p>
+          <p class="footer-plat">Mac $4.99 &middot; iPhone, iPad &amp; Watch $4.99 &middot; bought once, no subscription</p>
         </div>
         <div class="footer-links">
           <a href="support/">Support</a>
