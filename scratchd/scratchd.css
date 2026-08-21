@@ -927,3 +927,35 @@ kbd {
   .hero { padding-top: 20px; }
   .app-icon { width: 62px; height: 62px; border-radius: 15px; margin-bottom: 10px; }
 }
+
+/* --------------------------------------------------------- app store badge */
+/* Apple's artwork, used unmodified, which is what their guidelines require.
+   That rules out a CSS invert to make one file work in both themes, so both
+   supplied lockups ship and one is hidden. The base rule shows the white
+   lockup because the bare :root palette is the dark one, which keeps the
+   badge correct even if theme.js never runs. */
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  border-radius: 8px;
+  /* Apple asks for clear space of at least 10% of the badge height. */
+  padding: 6px;
+  margin: -6px;
+}
+
+.store-badge img { display: block; height: 40px; width: auto; }
+.store-badge:focus-visible { outline: 2px solid var(--cream); outline-offset: 2px; }
+
+/* These need to out-specify `.store-badge img` above, which sets display:block.
+   A bare `.badge-black` loses to it and both lockups render. */
+.store-badge .badge-black { display: none; }
+:root[data-theme="light"] .store-badge .badge-black { display: block; }
+:root[data-theme="light"] .store-badge .badge-white { display: none; }
+
+.price-note {
+  margin: 14px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
