@@ -855,3 +855,56 @@ kbd {
 
 /* On the Innovatory home page the switch sits at the end of the masthead. */
 .masthead .theme-mount { margin-left: auto; }
+
+/* ---------------------------------------------------------------- ph strip */
+/* Launch-day Product Hunt banner. Delete this block with the markup when the
+   launch is over.
+
+   Product Hunt's own embed hardcodes a white card and pulls its image from
+   imgix. Both are wrong here: the card would be unreadable in dark mode, and
+   a third-party request undercuts the claim this page makes about tracking.
+   Everything below uses the same tokens as the rest of the page. */
+
+.ph-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 26px 0 0;
+  padding: 14px 18px;
+  border: 1px solid var(--wash-strong);
+  border-radius: 14px;
+  background: var(--wash);
+}
+
+.ph-strip p {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.ph-strip p strong { color: var(--text); font-weight: 650; }
+
+/* Product Hunt orange, used only as a mark. It fails contrast against both
+   backgrounds at text sizes, so no words are set in it. */
+.ph-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff6154;
+  box-shadow: 0 0 0 4px rgba(255, 97, 84, 0.16);
+}
+
+.ph-cta {
+  flex: none;
+  padding: 9px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 560px) {
+  .ph-strip { gap: 12px; padding: 13px 15px; }
+  .ph-cta { width: 100%; justify-content: center; }
+}
