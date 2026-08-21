@@ -908,3 +908,22 @@ kbd {
   .ph-strip { gap: 12px; padding: 13px 15px; }
   .ph-cta { width: 100%; justify-content: center; }
 }
+
+/* ------------------------------------------------ hero fold, small screens */
+/* Measured on a 390x844 viewport: the first screenshot started 811px down,
+   below the fold. The hero itself was not the problem. The launch strip was
+   costing 144px, most of it from the button dropping onto its own full-width
+   row. Keeping the strip on one line gives the fold back to the product. */
+
+@media (max-width: 560px) {
+  .ph-strip {
+    gap: 10px;
+    padding: 10px 12px;
+    margin-top: 18px;
+    flex-wrap: nowrap;
+  }
+  .ph-strip p { flex: 1 1 auto; font-size: 13px; line-height: 1.35; }
+  .ph-cta { width: auto; padding: 7px 11px; font-size: 13px; white-space: nowrap; }
+  .hero { padding-top: 20px; }
+  .app-icon { width: 62px; height: 62px; border-radius: 15px; margin-bottom: 10px; }
+}

@@ -40,6 +40,96 @@
     "author": { "@type": "Organization", "name": "Innovatory", "url": "https://innovatory.xyz/" }
   }
   </script>
+  <!-- FAQ structured data: regenerate with scripts/faq-schema.py -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where are my notes stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In a folder you choose, as ordinary files. The default is a folder in your iCloud Drive, but you can point Scratchd anywhere — including a folder that stays on one machine. Open it in Finder or the Files app and the notes are just there."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is nothing to sign up for, and no Scratchd account exists to make. Syncing, if you want it, is your own iCloud Drive doing the work — so it follows from where you put the folder. Choose a folder outside iCloud Drive and nothing syncs; the notes stay on that device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I stop using Scratchd?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You keep the folder. Plain text, Markdown and structured files such as JSON, YAML, .proto and textproto still open in other apps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with Obsidian, iA Writer, or my editor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Point another app at the same folder. Scratchd notices changes made outside it and picks them up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my voice recording uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Voice notes require on-device speech recognition and Apple’s on-device models, and if those are not available Scratchd declines rather than falling back to a server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there AI in this?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Two features use Apple’s on-device models: voice notes and the journal’s generated reflection. Both run on your device, on hardware and OS versions that support them, and neither is sent anywhere for processing. There is no chatbot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use it for code and config?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and that is much of why it exists. JSON, YAML, .proto and textproto get real previews, and .proto gets a schema viewer with go-to-definition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are two apps. The Mac app is $4.99. The iPhone app is $4.99 and covers iPad and Apple Watch as well, so there is nothing further to buy for those. A bundle covering both at $8.99 is planned, and can only appear on the App Store once both apps are live. You buy it once — there is no subscription and no in-app purchase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does it say version 10 if it is new?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because it is the tenth version. It is the first one that has been for sale. It started as a plain Markdown editor and gained a scratchpad, tasks, links, a journal and the structured viewers over the versions since."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need to run it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "macOS 26, iOS 18, watchOS 11. Two features need more: CarPlay requires iOS 26.4, and voice notes plus the journal’s generated reflection require a device that supports Apple Intelligence."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- end FAQ structured data -->
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -530,6 +620,7 @@
           <p class="footer-plat">Mac $4.99, out now &middot; iPhone, iPad &amp; Watch $4.99, coming &middot; bought once</p>
         </div>
         <div class="footer-links">
+          <a href="compare/">Compare</a>
           <a href="support/">Support</a>
           <a href="privacy/">Privacy</a>
           <a href="mailto:hello@innovatory.xyz">Contact</a>
