@@ -945,7 +945,12 @@ kbd {
   margin: -6px;
 }
 
-.store-badge img { display: block; height: 40px; width: auto; }
+/* 52px to sit level with the ghost button beside it, scaled proportionally
+   from the supplied 156.1x40 so the artwork is not distorted. The button's
+   corner radius is matched to the badge's at this size rather than the other
+   way round, since the badge's radius is baked into Apple's SVG. */
+.store-badge img { display: block; height: 52px; width: auto; }
+.cta-row .btn { border-radius: 10px; }
 .store-badge:focus-visible { outline: 2px solid var(--cream); outline-offset: 2px; }
 
 /* These need to out-specify `.store-badge img` above, which sets display:block.
