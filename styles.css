@@ -256,3 +256,28 @@ h1 {
    before and did not need this. */
 .products { display: block; }
 .products .product-card + .product-card { margin-top: 14px; }
+
+/* Side by side once there is room for it. Stacked, the second card sat below
+   the fold on every laptop; as a two-column grid both clear it, and on an
+   828x1005 window the whole page fits with no scroll at all. The icon moves
+   above the text because a 373px column does not leave enough width for a
+   72px icon and a readable line beside it. */
+@media (min-width: 700px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .products h2 { grid-column: 1 / -1; margin: 0 0 4px; }
+  .products .product-card + .product-card { margin-top: 0; }
+
+  .product-card { flex-direction: column; gap: 12px; padding: 20px; }
+  .product-icon { width: 48px; height: 48px; }
+  .product-body { display: flex; flex-direction: column; flex: 1; }
+  .product-body p { max-width: none; }
+
+  /* The two descriptions run to different lengths, so without this the
+     two links sit at different heights across the row. */
+  .product-link { margin-top: auto; }
+}
