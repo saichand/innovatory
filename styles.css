@@ -90,7 +90,10 @@ main {
 }
 
 h1 {
-  font-size: clamp(44px, 8vw, 84px);
+  /* 84px pushed both product cards below the fold on a laptop. At 60px the
+     headline is three lines instead of four and the first card clears an
+     800px viewport with room to spare. */
+  font-size: clamp(40px, 6vw, 60px);
   line-height: 0.95;
   margin: 0;
   letter-spacing: -0.02em;
@@ -98,15 +101,16 @@ h1 {
 
 .subtitle {
   color: var(--muted);
-  font-size: 21px;
+  font-size: 19px;
   line-height: 1.5;
+  margin: 18px 0 0;
   max-width: 620px;
 }
 
 /* ---------- Products ---------- */
 
 .products {
-  margin: 56px 0 40px;
+  margin: 40px 0 40px;
   border-top: 1px solid var(--line);
   padding-top: 28px;
 }
