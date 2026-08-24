@@ -285,13 +285,31 @@ h1 {
   .product-link { margin-top: auto; }
 }
 
-/* Each card wears its own product's colour rather than the page's, so the two
-   read as two different things rather than two slots in a list. */
-.product-card.p-scratchd { background: rgba(240, 223, 196, 0.05); border-color: rgba(240, 223, 196, 0.16); }
-.product-card.p-carddle  { background: #121d1f; border-color: rgba(23, 158, 113, 0.30); }
+/* Dark: each card is its product's real site background, opaque. Scratchd's is
+   a neutral near-black and Carddle's a teal-black, so against the navy page
+   they read as three different materials. The first attempt used a 5% cream
+   wash for Scratchd, which composited to #161c2c: blue was the largest channel,
+   so it was not a warm card at all, it was a lighter navy one.
 
-.product-card.p-scratchd:hover, .product-card.p-scratchd:focus-visible { border-color: rgba(240, 223, 196, 0.42); }
-.product-card.p-carddle:hover,  .product-card.p-carddle:focus-visible  { border-color: rgba(23, 158, 113, 0.62); }
+   Light: no tinted panels. A cream panel on a blue page reads as highlighted
+   rather than as branded, so both cards take the same neutral wash and the
+   product colour lives only in the link. */
+.product-card.p-scratchd { background: #09090b; border-color: rgba(240, 223, 196, 0.14); }
+.product-card.p-carddle  { background: #121d1f; border-color: rgba(23, 158, 113, 0.26); }
 
-:root[data-theme="light"] .product-card.p-scratchd { background: #fdfbf7; border-color: rgba(47, 36, 22, 0.16); }
-:root[data-theme="light"] .product-card.p-carddle  { background: #f6f2e4; border-color: rgba(15, 106, 75, 0.30); }
+.product-card.p-scratchd:hover, .product-card.p-scratchd:focus-visible { border-color: rgba(240, 223, 196, 0.40); }
+.product-card.p-carddle:hover,  .product-card.p-carddle:focus-visible  { border-color: rgba(34, 181, 127, 0.58); }
+
+:root[data-theme="light"] .product-card.p-scratchd,
+:root[data-theme="light"] .product-card.p-carddle { background: var(--wash); border-color: var(--line-soft); }
+:root[data-theme="light"] .product-card.p-scratchd:hover,
+:root[data-theme="light"] .product-card.p-carddle:hover { background: var(--wash-up); }
+:root[data-theme="light"] .product-card.p-scratchd:hover { border-color: rgba(138, 90, 28, 0.45); }
+:root[data-theme="light"] .product-card.p-carddle:hover  { border-color: rgba(15, 106, 75, 0.45); }
+
+/* The one thing that identifies each product in both themes. Cream is
+   Scratchd's accent, green is Carddle's. */
+.p-scratchd .product-link { color: #f0dfc4; }
+.p-carddle  .product-link { color: #22b57f; }
+:root[data-theme="light"] .p-scratchd .product-link { color: #8a5a1c; }
+:root[data-theme="light"] .p-carddle  .product-link { color: #0c5a40; }
