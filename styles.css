@@ -247,3 +247,8 @@ h1 {
 }
 
 .theme-switch svg { width: 15px; height: 15px; display: block; }
+
+/* Two products now, so the section needs to space them. It was a single card
+   before and did not need this. */
+.products { display: block; }
+.products .product-card + .product-card { margin-top: 14px; }
