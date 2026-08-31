@@ -52,12 +52,19 @@ body {
     var(--bg);
   color: var(--text);
   display: grid;
-  place-items: center;
+  /* Top-aligned, not centred. Centring was fine when the page was tall enough
+     to fill the viewport; with three cards in one row it is short, and the
+     leftover height got split above and below, which left a large gap over the
+     masthead. main's own top padding sets that gap now. */
+  place-items: start center;
 }
 
 main {
-  max-width: 760px;
-  padding: 48px 24px 72px;
+  /* Widened from 760 to fit three product cards in one row. The headline and
+     subtitle keep their own max-widths below, so the reading measure is
+     unchanged; only the products grid uses the extra room. */
+  max-width: 1040px;
+  padding: clamp(32px, 5vh, 56px) 24px 72px;
   width: 100%;
   /* body is a grid; without this the auto minimum lets the masthead row
      widen the page on narrow screens. */
@@ -100,6 +107,7 @@ h1 {
   line-height: 0.95;
   margin: 0;
   letter-spacing: -0.02em;
+  max-width: 720px;
 }
 
 .subtitle {
@@ -266,39 +274,31 @@ h1 {
 .products { display: block; }
 .products .product-card + .product-card { margin-top: 14px; }
 
-/* Side by side once there is room for it. Stacked, the second card sat below
-   the fold on every laptop; as a two-column grid both clear it, and on an
-   828x1005 window the whole page fits with no scroll at all. The icon moves
-   above the text because a 373px column does not leave enough width for a
-   72px icon and a readable line beside it. */
-@media (min-width: 700px) {
+/* Three across once there is room, stacked full-width rows below that. There
+   is deliberately no two-across step: with three products it leaves one card
+   alone in a half-width cell, which reads as a mistake.
+
+   940px is where a third of the container stops being cramped. At 700 the
+   cards were 208px, which wraps the Carddle description to seven lines. */
+@media (min-width: 940px) {
   .products {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
     margin-top: 32px;
   }
   .products h2 { grid-column: 1 / -1; margin: 0 0 4px; }
   .products .product-card + .product-card { margin-top: 0; }
 
-  /* The third card spans the row rather than sitting alone in a half-width
-     cell. At full width it goes back to icon-beside-text, the layout the
-     narrow breakpoint already uses. */
-  .products .product-card:nth-child(4) {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .products .product-card:nth-child(4) .product-icon { width: 56px; height: 56px; }
-
+  /* The icon moves above the text because a third of the row does not leave
+     enough width for a 72px icon and a readable line beside it. */
   .product-card { flex-direction: column; gap: 12px; padding: 20px; }
   .product-icon { width: 48px; height: 48px; }
   .product-body { display: flex; flex-direction: column; flex: 1; }
   .product-body p { max-width: none; }
 
-  /* The two descriptions run to different lengths, so without this the
-     two links sit at different heights across the row. */
+  /* The three descriptions run to different lengths, so without this the
+     links sit at different heights across the row. */
   .product-link { margin-top: auto; }
 }
 
