@@ -110,17 +110,11 @@ h1 {
   max-width: 620px;
 }
 
-/* The one thing all three products have in common, said once near the top
-   rather than repeated on every card. */
-.privacy-line {
-  color: var(--faint);
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 14px 0 0;
-  max-width: 620px;
-  padding-left: 13px;
-  border-left: 2px solid var(--line);
-}
+/* The one thing all three products have in common. It sits inside the subtitle
+   rather than in a block of its own, so it reads as part of the sentence about
+   what gets built, not as a policy notice bolted underneath. Full text colour
+   against the subtitle's muted grey is the whole emphasis it needs. */
+.subtitle .pf { color: var(--text); }
 
 /* ---------- Products ---------- */
 
