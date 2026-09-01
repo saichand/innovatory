@@ -322,6 +322,17 @@ h1 {
   /* The three descriptions run to different lengths, so without this the
      links sit at different heights across the row. */
   .product-link { margin-top: auto; }
+
+  /* Same reason, other end: reserve four lines for the description so every
+     card's bullets begin on the same line. em rather than px so it holds if the
+     type scales. */
+  .product-body > p { min-height: calc(4 * 1.55em); }
+}
+
+/* Between 940 and 1024 the columns are narrow enough that the longest
+   description takes a fifth line, so the reservation has to grow with it. */
+@media (min-width: 940px) and (max-width: 1080px) {
+  .product-body > p { min-height: calc(5 * 1.55em); }
 }
 
 /* Dark: each card is its product's real site background, opaque. Scratchd's is
